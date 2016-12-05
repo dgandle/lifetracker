@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74D301FE1DDA007200F44F20 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D301FD1DDA007200F44F20 /* Database.swift */; };
+		74D302011DDA066900F44F20 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D301FF1DDA066900F44F20 /* Realm.framework */; };
+		74D302021DDA066B00F44F20 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74D301FF1DDA066900F44F20 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		74D302031DDA066B00F44F20 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D302001DDA066900F44F20 /* RealmSwift.framework */; };
+		74D302041DDA066B00F44F20 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74D302001DDA066900F44F20 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9130381F1DD5126200885AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130381E1DD5126200885AE2 /* AppDelegate.swift */; };
 		913038211DD5126200885AE2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913038201DD5126200885AE2 /* DashboardViewController.swift */; };
 		913038231DD5126200885AE2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913038221DD5126200885AE2 /* DataViewController.swift */; };
@@ -17,7 +22,36 @@
 		91F6C4501DD5164B001731A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F6C44F1DD5164B001731A3 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		74D3020C1DDA086800F44F20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2263AAB619B0A1E6007240D9;
+			remoteInfo = RealmPlugin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		74D302051DDA066C00F44F20 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				74D302041DDA066B00F44F20 /* RealmSwift.framework in Embed Frameworks */,
+				74D302021DDA066B00F44F20 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		74D301FD1DDA007200F44F20 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		74D301FF1DDA066900F44F20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		74D302001DDA066900F44F20 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RealmPlugin.xcodeproj; path = "../realm-swift-2.0.3/plugin/RealmPlugin.xcodeproj"; sourceTree = "<group>"; };
 		9130381B1DD5126200885AE2 /* lifetracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifetracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9130381E1DD5126200885AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		913038201DD5126200885AE2 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -35,15 +69,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D302031DDA066B00F44F20 /* RealmSwift.framework in Frameworks */,
+				74D302011DDA066900F44F20 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74D302091DDA086300F44F20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74D3020D1DDA086800F44F20 /* RealmPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		913038121DD5126100885AE2 = {
 			isa = PBXGroup;
 			children = (
+				74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */,
+				74D301FF1DDA066900F44F20 /* Realm.framework */,
+				74D302001DDA066900F44F20 /* RealmSwift.framework */,
 				9130381D1DD5126200885AE2 /* lifetracker */,
 				9130381C1DD5126200885AE2 /* Products */,
 			);
@@ -66,6 +113,7 @@
 				91F6C44F1DD5164B001731A3 /* SettingsViewController.swift */,
 				913038241DD5126200885AE2 /* Main.storyboard */,
 				91F6C44D1DD51628001731A3 /* HistoryViewController.swift */,
+				74D301FD1DDA007200F44F20 /* Database.swift */,
 				913038271DD5126200885AE2 /* Assets.xcassets */,
 				913038291DD5126200885AE2 /* LaunchScreen.storyboard */,
 				9130382C1DD5126200885AE2 /* Info.plist */,
@@ -83,6 +131,8 @@
 				913038171DD5126100885AE2 /* Sources */,
 				913038181DD5126100885AE2 /* Frameworks */,
 				913038191DD5126100885AE2 /* Resources */,
+				74D302051DDA066C00F44F20 /* Embed Frameworks */,
+				74D302061DDA071900F44F20 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -120,12 +170,28 @@
 			mainGroup = 913038121DD5126100885AE2;
 			productRefGroup = 9130381C1DD5126200885AE2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 74D302091DDA086300F44F20 /* Products */;
+					ProjectRef = 74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9130381A1DD5126100885AE2 /* lifetracker */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		74D3020D1DDA086800F44F20 /* RealmPlugin.xcplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RealmPlugin.xcplugin;
+			remoteRef = 74D3020C1DDA086800F44F20 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		913038191DD5126100885AE2 /* Resources */ = {
@@ -140,11 +206,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		74D302061DDA071900F44F20 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		913038171DD5126100885AE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D301FE1DDA007200F44F20 /* Database.swift in Sources */,
 				913038231DD5126200885AE2 /* DataViewController.swift in Sources */,
 				9130381F1DD5126200885AE2 /* AppDelegate.swift in Sources */,
 				913038211DD5126200885AE2 /* DashboardViewController.swift in Sources */,
@@ -264,6 +347,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/BenjaminDanzig/Coding/realm-swift-2.0.3/ios/swift-2.2",
+				);
 				INFOPLIST_FILE = lifetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.umass.lifetracker;
@@ -275,6 +363,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/BenjaminDanzig/Coding/realm-swift-2.0.3/ios/swift-2.2",
+				);
 				INFOPLIST_FILE = lifetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.umass.lifetracker;
