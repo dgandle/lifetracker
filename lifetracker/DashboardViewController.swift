@@ -24,10 +24,5 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func pressButton(sender: AnyObject) {
-        incrementNumActivity("Cups of Water",date: NSDate(),incVal: 5)
-        incrementNumActivity("Cups of Water",date: NSDate().dateByAddingTimeInterval(oneDay),incVal: 5)
-        incrementNumActivity("Cups of Wat",date: NSDate(),incVal: 5)
-    }
 }
 
