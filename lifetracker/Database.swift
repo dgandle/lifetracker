@@ -459,6 +459,18 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
     }
 }
 
+
+//increment the value of a number activity for a particular date. "incVal" is the amount by which
+//we will increment the current value. If the number is negative, we will decrement the value.
+func incrementNumActivity(name: String,date: NSDate,incVal: Int){
+    let currentVal = getActivityValue(name, date: date).numVal;
+    if(currentVal==nil){
+        print("The activity you have chosen has no current value. Please choose another activity or date.")
+        return
+    }
+    setActivityValue(name, date: date, boolInput: nil, numInput: currentVal!+incVal, moodInput: nil, dateInput: nil)
+}
+
 func initDB(){
     //Get the default realm
     let realm = try! Realm()

@@ -14,6 +14,9 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //check to see if we have moved on to a new day
+        newDayReset()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +24,10 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func pressButton(sender: AnyObject) {
+        incrementNumActivity("Cups of Water",date: NSDate(),incVal: 5)
+        incrementNumActivity("Cups of Water",date: NSDate().dateByAddingTimeInterval(oneDay),incVal: 5)
+        incrementNumActivity("Cups of Wat",date: NSDate(),incVal: 5)
+    }
 }
 
