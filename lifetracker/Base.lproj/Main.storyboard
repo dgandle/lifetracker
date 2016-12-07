@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NeuzeitGroT.ttf">
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+        </mutableArray>
+        <mutableArray key="NeuzeitGroT_Bold.ttf">
+            <string>NeuzeitGroT-Bold</string>
+            <string>NeuzeitGroT-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Dashboard-->
+        <!--Dashboard View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DashboardViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,17 +30,331 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dashboardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vHY-SG-pqy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZjH-g7-yDo" customClass="DashboardBackgroundCircle" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="-357" y="-112" width="667" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-1I-FbP">
+                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.95686274509803915" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="booleanCell" rowHeight="90" id="5Qs-hD-eAk" customClass="BooleanTableViewCell" customModule="lifetracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Qs-hD-eAk" id="ZFI-Tb-jQu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgc-c7-RNP">
+                                                    <rect key="frame" x="15" y="10" width="344" height="21"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
+                                                    <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-4K-dvf">
+                                                    <rect key="frame" x="211" y="43" width="94" height="30"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="94" id="FQh-56-CXP"/>
+                                                        <constraint firstAttribute="height" constant="30" id="gbb-16-alw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="18"/>
+                                                    <color key="tintColor" red="0.22745098039215686" green="0.77254901960784317" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="YES">
+                                                        <color key="titleColor" red="0.22745098039215686" green="0.77254901960784317" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="selected">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Za-LXh">
+                                                    <rect key="frame" x="71" y="43" width="94" height="30"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="5SO-Xw-uHe"/>
+                                                        <constraint firstAttribute="width" constant="94" id="swK-mM-gLM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="18"/>
+                                                    <color key="tintColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                                    <state key="normal" title="NO">
+                                                        <color key="titleColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Wv-4K-dvf" firstAttribute="centerY" secondItem="uEf-Za-LXh" secondAttribute="centerY" id="RaK-7z-MWm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="boolButtonNo" destination="uEf-Za-LXh" id="7vr-DY-Dwh"/>
+                                            <outlet property="boolButtonYes" destination="7Wv-4K-dvf" id="70Z-ll-edD"/>
+                                            <outlet property="booleanLabel" destination="Tgc-c7-RNP" id="3mC-F6-ga6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="counterCell" rowHeight="90" id="bEB-lj-XRg" customClass="CounterTableViewCell" customModule="lifetracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="91" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEB-lj-XRg" id="tQi-Mm-lb6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-Wr-1lD">
+                                                    <rect key="frame" x="15" y="10" width="336" height="21"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
+                                                    <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnS-I1-YLd">
+                                                    <rect key="frame" x="32" y="38" width="94" height="39"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="32"/>
+                                                    <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-17-mim">
+                                                    <rect key="frame" x="257" y="43" width="94" height="29"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.22745098039215686" green="0.77254901960784317" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="counterStepperValueChanged:" destination="bEB-lj-XRg" eventType="valueChanged" id="ywf-ie-sng"/>
+                                                    </connections>
+                                                </stepper>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="counterLabel" destination="cvP-Wr-1lD" id="r6n-td-0Ec"/>
+                                            <outlet property="counterStepper" destination="dxq-17-mim" id="lsD-9g-i6n"/>
+                                            <outlet property="counterValue" destination="xnS-I1-YLd" id="AZ5-eY-mZx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sliderCell" rowHeight="90" id="OHJ-C8-sX0" customClass="SliderTableViewCell" customModule="lifetracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="181" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OHJ-C8-sX0" id="NIC-2M-0BT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK8-t3-zY4">
+                                                    <rect key="frame" x="15" y="8" width="137" height="21"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
+                                                    <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-6w-BA1">
+                                                    <rect key="frame" x="39" y="37" width="296" height="31"/>
+                                                </slider>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="sliderLabel" destination="eK8-t3-zY4" id="G4R-MF-KMj"/>
+                                            <outlet property="sliderSlider" destination="xGh-6w-BA1" id="oJ3-E3-5EP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="timeCell" rowHeight="90" id="z2s-Y7-ObS" customClass="TimeTableViewCell" customModule="lifetracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="271" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2s-Y7-ObS" id="ObX-CV-ITk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq1-Ub-yjh">
+                                                    <rect key="frame" x="15" y="8" width="173" height="21"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
+                                                    <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86c-Xw-jj1">
+                                                    <rect key="frame" x="33" y="37" width="94" height="39"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="32"/>
+                                                    <color key="textColor" red="0.36078431370000003" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="Uq1-Ub-yjh" id="ra9-J6-Cp9"/>
+                                            <outlet property="timeValue" destination="86c-Xw-jj1" id="vKx-gm-SbG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayHeaderCell" rowHeight="136" id="BKd-E6-JUy" customClass="TodayTableViewCell" customModule="lifetracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="361" width="375" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BKd-E6-JUy" id="RIj-2W-ae9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-H1-7tU">
+                                                    <rect key="frame" x="14" y="0.0" width="325" height="62"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="48"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.17254901960784313" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvG-VU-oTM">
+                                                    <rect key="frame" x="15" y="58" width="341" height="41"/>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="24"/>
+                                                    <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="lvG-VU-oTM" id="cGC-Kv-ydj"/>
+                                            <outlet property="dayLabel" destination="xcf-H1-7tU" id="Nsz-Do-chb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="NYs-Tf-QZc"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Xes-wz-IWL"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgy-Wp-RpL" customClass="AddNewActivityButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="325" y="28" width="30" height="30"/>
+                                <connections>
+                                    <segue destination="csE-Kq-6ib" kind="show" identifier="PushSegue" id="1nv-0d-y3x"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Filter" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r99-lj-oB8">
+                                <rect key="frame" x="20" y="28" width="292" height="30"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="9pv-A4-QxB" eventType="editingDidEndOnExit" id="u0M-hc-1tL"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="pxK-1I-FbP" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="45" id="eG0-pc-AzM"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pxK-1I-FbP" secondAttribute="bottom" constant="96" id="ohh-ar-38J"/>
+                            <constraint firstAttribute="trailing" secondItem="pxK-1I-FbP" secondAttribute="trailing" id="uCI-zg-BSp"/>
+                            <constraint firstItem="pxK-1I-FbP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="xDt-Ga-0Ti"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pxK-1I-FbP" secondAttribute="bottom" id="zld-YN-XNz"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PzZ-gy-uwp" appends="YES" id="lQv-Jd-SUR"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard-50" selectedImage="Dashboard Filled-50" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="FHE-3k-Eg9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addNewActivityButton" destination="Tgy-Wp-RpL" id="rwQ-EW-PKd"/>
+                        <outlet property="searchBar" destination="r99-lj-oB8" id="0qc-F5-FBC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PzZ-gy-uwp">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="9pv-A4-QxB" id="xKR-We-jxv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="670" y="-1000"/>
+            <point key="canvasLocation" x="1544.5" y="-1271.5"/>
         </scene>
-        <!--Data-->
+        <!--Dashboard View Controller-->
+        <scene sceneID="XJZ-P4-HzV">
+            <objects>
+                <viewController id="csE-Kq-6ib" customClass="DashboardViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cZq-em-Z8B"/>
+                        <viewControllerLayoutGuide type="bottom" id="TWf-Vp-ujt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DAT-9J-Kvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUR-Hu-sy1" customClass="AddNewActivityButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="325" y="28" width="30" height="30"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="degrees">
+                                        <integer key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="circleTapped:" destination="csE-Kq-6ib" eventType="touchUpInside" id="Mft-7g-3DR"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEh-xc-ehG" customClass="DashboardBackgroundCircle" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="-357" y="-112" width="667" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-cO-iCs">
+                                <rect key="frame" x="121" y="32" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-d2-Taf">
+                                <rect key="frame" x="78" y="223" width="49" height="30"/>
+                                <state key="normal" title="Yes/No"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBU-QG-kXw">
+                                <rect key="frame" x="253" y="223" width="40" height="30"/>
+                                <state key="normal" title="Slider"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGK-eF-6Eq">
+                                <rect key="frame" x="74" y="288" width="56" height="30"/>
+                                <state key="normal" title="Counter"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7V-0m-ZpU">
+                                <rect key="frame" x="259" y="288" width="34" height="30"/>
+                                <state key="normal" title="Time"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpR-eC-4VB">
+                                <rect key="frame" x="122" y="399" width="130" height="30"/>
+                                <state key="normal" title="Create New Object"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aL-Yi-5XJ">
+                                <rect key="frame" x="79" y="107" width="216" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ozT-cO-iCs" firstAttribute="centerY" secondItem="DAT-9J-Kvc" secondAttribute="centerY" id="kuo-xV-bXZ"/>
+                            <constraint firstItem="ozT-cO-iCs" firstAttribute="centerX" secondItem="DAT-9J-Kvc" secondAttribute="centerX" id="z3p-iZ-zAj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xEh-xc-ehG"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addNewActivityButton" destination="VUR-Hu-sy1" id="bmp-FF-qwn"/>
+                        <outlet property="backgroundCircle" destination="xEh-xc-ehG" id="0vx-I6-sl3"/>
+                        <outlet property="createNewActivityButton" destination="kpR-eC-4VB" id="XJz-Na-zrE"/>
+                        <outlet property="newActivityName" destination="2aL-Yi-5XJ" id="xIH-vW-HBY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tje-Ii-dZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023.5" y="-1271.5"/>
+        </scene>
+        <!--Data View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="DataViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +367,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Data" image="Bar Chart-50" selectedImage="Bar Chart Filled-50" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="Area Chart-48" selectedImage="Area Chart-48" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,22 +379,18 @@
         <scene sceneID="FDq-OM-lPC">
             <objects>
                 <viewController id="tc4-b9-5bA" customClass="HistoryViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fMM-ZB-wkM"/>
-                        <viewControllerLayoutGuide type="bottom" id="60r-vd-eUc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="73M-Um-Ogo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mox-vO-f4W">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="History" image="Transaction List-50" selectedImage="Transaction List Filled-50" id="sFU-1v-Tym"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="History" id="Vkb-bu-PfU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1l-3Y-LcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="419"/>
+            <point key="canvasLocation" x="2242" y="419"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="98j-dD-zE0">
             <objects>
                 <viewController id="CbO-D1-1TW" customClass="SettingsViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,7 +403,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings-50" selectedImage="Settings Filled-50" id="3Jd-I4-RDd"/>
+                    <tabBarItem key="tabBarItem" title="" image="Settings 3-48" selectedImage="Settings 3-48" id="3Jd-I4-RDd">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Loo-mv-oom" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,9 +422,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="wAW-tF-1Qf" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="tc4-b9-5bA" kind="relationship" relationship="viewControllers" id="c1A-8w-4Th"/>
+                        <segue destination="pMi-mY-Ps8" kind="relationship" relationship="viewControllers" id="c1A-8w-4Th"/>
                         <segue destination="CbO-D1-1TW" kind="relationship" relationship="viewControllers" id="xKZ-bJ-kKR"/>
                     </connections>
                 </tabBarController>
@@ -102,15 +432,56 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k8a-ey-Rgq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wAW-tF-1Qf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="dashboardIcon" selectedImage="dashboardIcon" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAF-CE-pIH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="delegate" destination="i4N-kB-BJf" id="4je-aq-d8V"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="Q41-kc-d3X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzN-1B-VOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="i4N-kB-BJf" customClass="NavigationControllerDelegate" customModule="lifetracker" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="-1272"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bQC-Vr-6WL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pMi-mY-Ps8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Transaction List-64" selectedImage="Transaction List-64" id="sFU-1v-Tym">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPG-QP-3nM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tc4-b9-5bA" kind="relationship" relationship="rootViewController" id="mTQ-gC-jbb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRc-xm-Hs3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="419"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Bar Chart Filled-50" width="25" height="25"/>
-        <image name="Bar Chart-50" width="25" height="25"/>
-        <image name="Dashboard Filled-50" width="25" height="25"/>
-        <image name="Dashboard-50" width="25" height="25"/>
-        <image name="Settings Filled-50" width="25" height="25"/>
-        <image name="Settings-50" width="25" height="25"/>
-        <image name="Transaction List Filled-50" width="25" height="25"/>
-        <image name="Transaction List-50" width="25" height="25"/>
+        <image name="Area Chart-48" width="32" height="32"/>
+        <image name="Settings 3-48" width="32" height="32"/>
+        <image name="Transaction List-64" width="32" height="32"/>
+        <image name="dashboardBackground" width="375" height="667"/>
+        <image name="dashboardIcon" width="24" height="24"/>
     </resources>
 </document>
