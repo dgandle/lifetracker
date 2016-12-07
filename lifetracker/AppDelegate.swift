@@ -8,6 +8,8 @@
 
 import UIKit
 
+@IBDesignable
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let tbController = self.window!.rootViewController as! UITabBarController
+        
+        tbController.tabBar.barTintColor = UIColor(red: 15/255, green: 17/255, blue: 26/255, alpha: 1.0)
+        tbController.tabBar.translucent = false
+        tbController.tabBar.tintColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
+        
         return true
     }
 
