@@ -43,14 +43,16 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         newDayReset()
         
         //test code: REMOVE LATER
-        addNewActivity("Cups of Coffee Drank", type: "Number")
-        addNewActivity("Time of Meal", type: "Date")
-        addNewActivity("Satisfaction Level", type: "Mood")
-        addNewActivity("Would I do it again", type: "Boolean")
-        setActivityValue("Cups of Coffee Drank", date: NSDate(), boolInput: nil, numInput: 5000, moodInput: nil, dateInput: nil)
-        setActivityValue("Time of Meal", date: NSDate(), boolInput: nil, numInput: nil, moodInput: nil, dateInput: NSDate())
-        setActivityValue("Satisfaction Level", date: NSDate(), boolInput: nil, numInput: nil, moodInput: 5, dateInput: nil)
-        setActivityValue("Would I do it again", date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
+        //addNewActivity("Cups of Coffee Drank", type: "Number")
+        //addNewActivity("Time of Meal", type: "Date")
+        //addNewActivity("Satisfaction Level", type: "Mood")
+        //addNewActivity("Would I do it again", type: "Boolean")
+        addNewActivity("Naps Taken", type: "Number")
+        //setActivityValue("Cups of Coffee Drank", date: NSDate(), boolInput: nil, numInput: 5000, moodInput: nil, dateInput: nil)
+        setActivityValue("Naps Taken", date: NSDate(), boolInput: nil, numInput: 99, moodInput: nil, dateInput: nil)
+        //setActivityValue("Time of Meal", date: NSDate(), boolInput: nil, numInput: nil, moodInput: nil, dateInput: NSDate())
+        //setActivityValue("Satisfaction Level", date: NSDate(), boolInput: nil, numInput: nil, moodInput: 5, dateInput: nil)
+        //setActivityValue("Would I do it again", date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
         //test code: REMOVE LATER
         
         numActivities = realm.objects(NumberActivity.self)
@@ -58,7 +60,7 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         moodActivities = realm.objects(MoodActivity.self)
         boolActivities = realm.objects(BooleanActivity.self)
         
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
     override func didReceiveMemoryWarning() {
