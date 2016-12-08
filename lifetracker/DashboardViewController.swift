@@ -95,26 +95,20 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
 //            let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
 //            cell.counterLabel.text = "Counter Cell"
 //            return cell
-        } else if (indexPath.row == 2){
+        }else if(indexPath.row - 1 < numActivities.count+moodActivities.count){
             let cell = tableView.dequeueReusableCellWithIdentifier("sliderCell") as! SliderTableViewCell
-            cell.sliderLabel.text = "Slider Cell"
+            cell.sliderLabel.text = moodActivities[indexPath.row-1-numActivities.count].name
             return cell
-        } else if (indexPath.row == 3){
+        }
+        else if(indexPath.row - 1 < numActivities.count+moodActivities.count+boolActivities.count){
+            let cell = tableView.dequeueReusableCellWithIdentifier("booleanCell") as! BooleanTableViewCell
+            cell.booleanLabel.text = boolActivities[indexPath.row-1-(numActivities.count+moodActivities.count)].name
+            return cell
+        }
+        else{//case that it is a date cell
             let cell = tableView.dequeueReusableCellWithIdentifier("timeCell") as! TimeTableViewCell
-            cell.timeLabel.text = "Time Cell"
+            cell.timeLabel.text = dateActivities[indexPath.row-1-(numActivities.count+moodActivities.count+boolActivities.count)].name
             return cell
-        } else {
-            
-        // Create a new cell with the reuse identifier of our prototype cell
-        // as our custom table cell class
-        let cell = tableView.dequeueReusableCellWithIdentifier("booleanCell") as! BooleanTableViewCell
-        
-        // Set the first row text label to the firstRowLabel data in our current array item
-        cell.booleanLabel.text = "Boolean Cell"
-        
-        // Return our new cell for display
-        return cell
-            
         }
     }
     
