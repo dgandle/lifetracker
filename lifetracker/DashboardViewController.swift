@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 @IBDesignable
 
 class DashboardViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    struct MyData {
-        var firstRowLabel:String
-    }
+    let realm = try! Realm()
     
-    var tableData: [MyData] = []
-    
+    //Generate activity list: List of all activities
+    //Each activity in list has title, type, and value
+    var numActivities:Results<NumberActivity>!
+    var dateActivities:Results<DateActivity>!
+    var moodActivities:Results<MoodActivity>!
+    var boolActivities:Results<BooleanActivity>!
     
     //Dashboard Main Page Items
     @IBOutlet weak var addNewActivityButton: AddNewActivityButton!
@@ -36,7 +39,26 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        newDayReset()
+        
+        //test code: REMOVE LATER
+        addNewActivity("Cups of Coffee Drank", type: "Number")
+        addNewActivity("Time of Meal", type: "Date")
+        addNewActivity("Satisfaction Level", type: "Mood")
+        addNewActivity("Would I do it again", type: "Boolean")
+        setActivityValue("Cups of Coffee Drank", date: NSDate(), boolInput: nil, numInput: 5000, moodInput: nil, dateInput: nil)
+        setActivityValue("Time of Meal", date: NSDate(), boolInput: nil, numInput: nil, moodInput: nil, dateInput: NSDate())
+        setActivityValue("Satisfaction Level", date: NSDate(), boolInput: nil, numInput: nil, moodInput: 5, dateInput: nil)
+        setActivityValue("Would I do it again", date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
+        //test code: REMOVE LATER
+        
+        numActivities = realm.objects(NumberActivity.self)
+        dateActivities = realm.objects(DateActivity.self)
+        moodActivities = realm.objects(MoodActivity.self)
+        boolActivities = realm.objects(BooleanActivity.self)
+        
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +67,8 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        //temporary value
+        return numActivities.count+dateActivities.count+moodActivities.count+boolActivities.count+1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -55,10 +78,23 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("todayHeaderCell") as! TodayTableViewCell
             return cell
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row - 1 < numActivities.count) {
             let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
-            cell.counterLabel.text = "Counter Cell"
+            cell.counterLabel.text = numActivities[indexPath.row-1].name
+            cell.counterValue.text = String(numActivities[indexPath.row-1].values.last!.value)
             return cell
+//        }
+        
+        
+        
+        //Old Test Code
+//        if (indexPath.row == 0) {
+//            let cell = tableView.dequeueReusableCellWithIdentifier("todayHeaderCell") as! TodayTableViewCell
+//            return cell
+//        } else if (indexPath.row == 1) {
+//            let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
+//            cell.counterLabel.text = "Counter Cell"
+//            return cell
         } else if (indexPath.row == 2){
             let cell = tableView.dequeueReusableCellWithIdentifier("sliderCell") as! SliderTableViewCell
             cell.sliderLabel.text = "Slider Cell"

@@ -506,7 +506,12 @@ func newDayReset() ->Bool{
     //Get the default realm
     let realm = try! Realm()
     //get the totalDays and the currentDay
-    let dbInfo = realm.objects(DBInfo.self)[0]
+    var allDbInfos = realm.objects(DBInfo.self)
+    if(allDbInfos.count==0){
+        initDB()
+        allDbInfos = realm.objects(DBInfo.self)
+    }
+    let dbInfo = allDbInfos[0]
     let totalDays = dbInfo.totalDays
     let currentDay = dbInfo.currentDay
     let currentLTDay = getCurrentLTDay()

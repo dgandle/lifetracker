@@ -38,16 +38,6 @@
 		91F7BFAC1DEF711C0034778A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BFAB1DEF711C0034778A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		74D3020C1DDA086800F44F20 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2263AAB619B0A1E6007240D9;
-			remoteInfo = RealmPlugin;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		74D302051DDA066C00F44F20 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -67,7 +57,6 @@
 		74D301FD1DDA007200F44F20 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		74D301FF1DDA066900F44F20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		74D302001DDA066900F44F20 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RealmPlugin.xcodeproj; path = "../realm-swift-2.0.3/plugin/RealmPlugin.xcodeproj"; sourceTree = "<group>"; };
 		9100F8751DEDF5B1007A5E2E /* NeuzeitGroT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeuzeitGroT.ttf; sourceTree = "<group>"; };
 		9100F8761DEDF5B7007A5E2E /* NeuzeitGroT_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeuzeitGroT_Bold.ttf; sourceTree = "<group>"; };
 		9130381B1DD5126200885AE2 /* lifetracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifetracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,18 +97,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		74D302091DDA086300F44F20 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				74D3020D1DDA086800F44F20 /* RealmPlugin.xcplugin */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		913038121DD5126100885AE2 = {
 			isa = PBXGroup;
 			children = (
-				74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */,
 				74D301FF1DDA066900F44F20 /* Realm.framework */,
 				74D302001DDA066900F44F20 /* RealmSwift.framework */,
 				9130381D1DD5126200885AE2 /* lifetracker */,
@@ -224,28 +204,12 @@
 			mainGroup = 913038121DD5126100885AE2;
 			productRefGroup = 9130381C1DD5126200885AE2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 74D302091DDA086300F44F20 /* Products */;
-					ProjectRef = 74D302081DDA086300F44F20 /* RealmPlugin.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9130381A1DD5126100885AE2 /* lifetracker */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		74D3020D1DDA086800F44F20 /* RealmPlugin.xcplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RealmPlugin.xcplugin;
-			remoteRef = 74D3020C1DDA086800F44F20 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		913038191DD5126100885AE2 /* Resources */ = {

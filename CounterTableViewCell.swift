@@ -14,10 +14,16 @@ class CounterTableViewCell: UITableViewCell {
     @IBOutlet weak var counterValue: UILabel!
     
     @IBOutlet weak var counterStepper: UIStepper!
+    var counterStepperValue: Double = -1.0
+    
+    //declare title variable
+    //declare date variable
+    //declare value variable
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -27,7 +33,41 @@ class CounterTableViewCell: UITableViewCell {
     }
     
     @IBAction func counterStepperValueChanged(sender: UIStepper) {
-        counterValue.text = Int(sender.value).description
+//        counterValue.text = Int(sender.value).description
+//        counterValue.text = String(sender.value)
+        
+        if (counterStepper.value  > counterStepperValue)
+        {
+            print("increment")
+            counterStepperValue = counterStepperValue + 1.0
+            
+            incrementNumActivity(counterLabel.text!, date: NSDate(), incVal: 1)
+            
+            counterValue.text = String(getActivityValue(counterLabel.text!, date: NSDate()).numVal!)
+        }
+        else
+        {
+            print("decrement")
+            counterStepperValue = counterStepper.value - 1.0
+            
+            
+            incrementNumActivity(counterLabel.text!, date: NSDate(), incVal: -1)
+            
+            counterValue.text = String(getActivityValue(counterLabel.text!, date: NSDate()).numVal!)
+        }
+        
+        
+        
+        //function to change variable in database
+        //incrementNumActivity(counterLabel.text, date: <#T##NSDate#>, incVal: Int(sender.value))
+        
     }
 
+    
+//    func addValues(title, date, value) {
+//        //update title text field
+//        //update value text field
+//        //update local title, value, date variables
+//    }
+    
 }
