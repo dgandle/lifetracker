@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,8 +14,11 @@
             <string>NeuzeitGroT-Regu</string>
             <string>NeuzeitGroT-Regu</string>
             <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
         </mutableArray>
         <mutableArray key="NeuzeitGroT_Bold.ttf">
+            <string>NeuzeitGroT-Bold</string>
+            <string>NeuzeitGroT-Bold</string>
             <string>NeuzeitGroT-Bold</string>
             <string>NeuzeitGroT-Bold</string>
         </mutableArray>
@@ -51,16 +54,16 @@
                                         <rect key="frame" x="0.0" y="1" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Qs-hD-eAk" id="ZFI-Tb-jQu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgc-c7-RNP">
-                                                    <rect key="frame" x="15" y="10" width="344" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="344" height="25"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-4K-dvf">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-4K-dvf">
                                                     <rect key="frame" x="211" y="43" width="94" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -76,10 +79,11 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="pressYesButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="Ced-w0-tyB"/>
+                                                        <action selector="touchDownYesButton:" destination="5Qs-hD-eAk" eventType="touchDown" id="xkx-Ju-4Tw"/>
+                                                        <action selector="touchUpInsideYesButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="yHs-2W-o9u"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Za-LXh">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Za-LXh">
                                                     <rect key="frame" x="71" y="43" width="94" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -93,7 +97,8 @@
                                                         <color key="titleColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="pressNoButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="hJy-ga-pVJ"/>
+                                                        <action selector="touchDownNoButton:" destination="5Qs-hD-eAk" eventType="touchDown" id="keG-lQ-zOn"/>
+                                                        <action selector="touchUpInsideNoButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="a2A-Ms-pSP"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -112,11 +117,11 @@
                                         <rect key="frame" x="0.0" y="91" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEB-lj-XRg" id="tQi-Mm-lb6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-Wr-1lD">
-                                                    <rect key="frame" x="15" y="10" width="336" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="336" height="25"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -127,7 +132,7 @@
                                                     <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" minimumValue="-10000" maximumValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-17-mim">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-17-mim">
                                                     <rect key="frame" x="257" y="43" width="94" height="29"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" red="0.22745098039215686" green="0.77254901960784317" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,11 +153,11 @@
                                         <rect key="frame" x="0.0" y="181" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OHJ-C8-sX0" id="NIC-2M-0BT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK8-t3-zY4">
-                                                    <rect key="frame" x="15" y="8" width="137" height="21"/>
+                                                    <rect key="frame" x="15" y="8" width="343" height="21"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -172,11 +177,11 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2s-Y7-ObS" id="ObX-CV-ITk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq1-Ub-yjh">
-                                                    <rect key="frame" x="15" y="8" width="173" height="21"/>
+                                                    <rect key="frame" x="15" y="8" width="345" height="29"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -199,7 +204,7 @@
                                         <rect key="frame" x="0.0" y="361" width="375" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BKd-E6-JUy" id="RIj-2W-ae9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-H1-7tU">
@@ -305,37 +310,84 @@
                                 <rect key="frame" x="-357" y="-112" width="667" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-cO-iCs">
-                                <rect key="frame" x="121" y="32" width="131" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name your new activity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-cO-iCs">
+                                <rect key="frame" x="11" y="63" width="211.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-d2-Taf">
-                                <rect key="frame" x="78" y="223" width="49" height="30"/>
-                                <state key="normal" title="Yes/No"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBU-QG-kXw" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="226" y="230" width="100" height="134"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sliderSelectButton"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="slider" backgroundImage="sliderSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="sliderSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBU-QG-kXw">
-                                <rect key="frame" x="253" y="223" width="40" height="30"/>
-                                <state key="normal" title="Slider"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGK-eF-6Eq">
-                                <rect key="frame" x="74" y="288" width="56" height="30"/>
-                                <state key="normal" title="Counter"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7V-0m-ZpU">
-                                <rect key="frame" x="259" y="288" width="34" height="30"/>
-                                <state key="normal" title="Time"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpR-eC-4VB">
-                                <rect key="frame" x="122" y="399" width="130" height="30"/>
-                                <state key="normal" title="Create New Object"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGK-eF-6Eq" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="50" y="388" width="100" height="134"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="counter" backgroundImage="counterSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="counterSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aL-Yi-5XJ">
                                 <rect key="frame" x="79" y="107" width="216" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-d2-Taf" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="50" y="230" width="100" height="134"/>
+                                <accessibility key="accessibilityConfiguration" identifier="booleanSelectButton"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="yes/no" backgroundImage="booleanSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="booleanSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" title="Yes/No" backgroundImage="booleanSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="focused">
+                                    <color key="titleColor" red="0.1450980392" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7V-0m-ZpU" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="226" y="388" width="100" height="134"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="time" backgroundImage="timeSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="timeSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpR-eC-4VB">
+                                <rect key="frame" x="50" y="557" width="275" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="18"/>
+                                <state key="normal" title="ADD NEW ACTIVITY">
+                                    <color key="titleColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose an activity type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGD-ab-XFK">
+                                <rect key="frame" x="15" y="180" width="345" height="28"/>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -346,14 +398,22 @@
                             <mask key="subviews">
                                 <exclude reference="xEh-xc-ehG"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="kuo-xV-bXZ"/>
+                                <exclude reference="z3p-iZ-zAj"/>
+                            </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addNewActivityButton" destination="VUR-Hu-sy1" id="bmp-FF-qwn"/>
                         <outlet property="backgroundCircle" destination="xEh-xc-ehG" id="0vx-I6-sl3"/>
+                        <outlet property="booleanSelectActivityButton" destination="NOV-d2-Taf" id="oQG-wz-T14"/>
+                        <outlet property="counterSelectActivityButton" destination="nGK-eF-6Eq" id="A4f-w5-Bxg"/>
                         <outlet property="createNewActivityButton" destination="kpR-eC-4VB" id="XJz-Na-zrE"/>
                         <outlet property="newActivityName" destination="2aL-Yi-5XJ" id="xIH-vW-HBY"/>
+                        <outlet property="sliderSelectActivityButton" destination="xBU-QG-kXw" id="w8d-qo-9uL"/>
+                        <outlet property="timeSelectActivityButton" destination="K7V-0m-ZpU" id="BDb-UN-gd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tje-Ii-dZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,13 +433,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Area Chart-48" selectedImage="Area Chart-48" id="cPa-gy-q4n">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="yRz-mY-kR6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="-424"/>
+            <point key="canvasLocation" x="2242" y="-424"/>
         </scene>
         <!--History-->
         <scene sceneID="FDq-OM-lPC">
@@ -429,7 +487,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="wAW-tF-1Qf" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="gLS-Dn-084" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="pMi-mY-Ps8" kind="relationship" relationship="viewControllers" id="c1A-8w-4Th"/>
                         <segue destination="CbO-D1-1TW" kind="relationship" relationship="viewControllers" id="xKZ-bJ-kKR"/>
                     </connections>
@@ -482,12 +540,41 @@
             </objects>
             <point key="canvasLocation" x="1430" y="419"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f3F-Cm-bJK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gLS-Dn-084" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Area Chart-48" selectedImage="Area Chart-48" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xxh-ny-uh7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="dZ0-Yx-QQH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="blH-F7-f98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="-424"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Area Chart-48" width="32" height="32"/>
         <image name="Settings 3-48" width="32" height="32"/>
         <image name="Transaction List-64" width="32" height="32"/>
+        <image name="booleanSelectButtonImage" width="100" height="134"/>
+        <image name="booleanSelectButtonImageDark" width="100" height="134"/>
+        <image name="counterSelectButtonImage" width="100" height="134"/>
+        <image name="counterSelectButtonImageDark" width="100" height="134"/>
         <image name="dashboardBackground" width="375" height="667"/>
         <image name="dashboardIcon" width="24" height="24"/>
+        <image name="sliderSelectButtonImage" width="100" height="134"/>
+        <image name="sliderSelectButtonImageDark" width="100" height="134"/>
+        <image name="timeSelectButtonImage" width="100" height="134"/>
+        <image name="timeSelectButtonImageDark" width="100" height="134"/>
     </resources>
 </document>

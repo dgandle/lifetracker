@@ -53,8 +53,9 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         maskLayerAnimation.delegate = self
         maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
         
-        fromViewController.addNewActivityButton.rotate45Degrees()
         toViewController.addNewActivityButton.rotate45Degrees()
+        toViewController.addNewActivityButton.changeButtonColor()
+        fromViewController.addNewActivityButton.changeButtonColor()
     }
 
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {

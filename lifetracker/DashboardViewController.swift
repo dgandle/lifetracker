@@ -30,6 +30,11 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     //Dashboard Add New Activity Page Items
     @IBOutlet weak var newActivityName: UITextField!
     @IBOutlet weak var createNewActivityButton: UIButton!
+    @IBOutlet weak var booleanSelectActivityButton: SelectActivityTypeButton!
+    @IBOutlet weak var sliderSelectActivityButton: SelectActivityTypeButton!
+    @IBOutlet weak var counterSelectActivityButton: SelectActivityTypeButton!
+    @IBOutlet weak var timeSelectActivityButton: SelectActivityTypeButton!
+    
     
     
     @IBAction func circleTapped(sender:UIButton) {
@@ -61,6 +66,25 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         boolActivities = realm.objects(BooleanActivity.self)
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        var subviews : NSArray = self.view.subviews
+        for button : AnyObject in subviews{
+            if(button .isKindOfClass(UIButton)){
+                if(button.accessibilityIdentifier == "booleanSelectButton"){
+                    booleanSelectActivityButton.selected = true
+                    sliderSelectActivityButton.selected = false
+                    counterSelectActivityButton.selected = false
+                    timeSelectActivityButton.selected = false
+                    
+                    booleanSelectActivityButton?.alternateButton = [sliderSelectActivityButton!, counterSelectActivityButton!, timeSelectActivityButton!]
+                    sliderSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, counterSelectActivityButton!, timeSelectActivityButton!]
+                    counterSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, sliderSelectActivityButton!, timeSelectActivityButton!]
+                    timeSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, sliderSelectActivityButton!, counterSelectActivityButton!]
+                }else{
+                    //Don't load select button code
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +100,12 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         searchBar.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
+        
+        //Enables instant highlighting of stepper when also turned on in IB
+        for case let x as UIScrollView in tableView.subviews {
+            x.delaysContentTouches = false
+        }
+        
         
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("todayHeaderCell") as! TodayTableViewCell

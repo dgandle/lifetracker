@@ -24,6 +24,11 @@ class CounterTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+//        var activityValue = getActivityValue(counterLabel.text!, date: NSDate()).numVal!
+        
+//        counterStepper.value = Double(activityValue)
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -34,7 +39,7 @@ class CounterTableViewCell: UITableViewCell {
     
     @IBAction func counterStepperValueChanged(sender: UIStepper) {
 //        counterValue.text = Int(sender.value).description
-//        counterValue.text = String(sender.value)
+        
         
         if (counterStepper.value  > counterStepperValue)
         {
@@ -50,8 +55,9 @@ class CounterTableViewCell: UITableViewCell {
             print("decrement")
             counterStepperValue = counterStepper.value - 1.0
             
-            
+            if (getActivityValue(counterLabel.text!, date: NSDate()).numVal! != 0) {
             incrementNumActivity(counterLabel.text!, date: NSDate(), incVal: -1)
+            }
             
             counterValue.text = String(getActivityValue(counterLabel.text!, date: NSDate()).numVal!)
         }

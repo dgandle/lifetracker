@@ -13,12 +13,15 @@ import UIKit
 class AddNewActivityButton: UIButton {
     
     var degrees:CGFloat = 0
+    var backgroundCircleColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
+    var plusColor = UIColor.whiteColor()
+
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
         var path = UIBezierPath(ovalInRect: rect)
-        UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).setFill()
+        backgroundCircleColor.setFill()
         path.fill()
         
         
@@ -57,7 +60,7 @@ class AddNewActivityButton: UIButton {
             y:bounds.height/2 + plusWidth/2))
         
         //set the stroke color
-        UIColor.whiteColor().setStroke()
+        plusColor.setStroke()
         
         //draw the stroke
         plusPath.stroke()
@@ -67,21 +70,32 @@ class AddNewActivityButton: UIButton {
         self.transform = CGAffineTransformMakeRotation(radians);
         
     }
-    
-//    func runtimeRotationChange(degrees: CGFloat) {
-//        var radians = degrees * CGFloat(M_PI/180)
-//        self.transform = CGAffineTransformMakeRotation(radians);
-//    }
  
     func rotate45Degrees(duration: CFTimeInterval = 0.6, completionDelegate: AnyObject? = nil) {
+        
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = CGFloat(M_PI * 0.25)
+        let rotateAnimationCurve = CAMediaTimingFunction(controlPoints: 0.1, 0.54, 0.53, 0.99)
+        
+        if (plusColor == UIColor.whiteColor()) {
+            rotateAnimation.fromValue = 0.0
+            rotateAnimation.toValue = CGFloat(M_PI * 0.25)
+        } else if (backgroundCircleColor == UIColor.whiteColor()) {
+            rotateAnimation.fromValue = CGFloat(M_PI * 0.25)
+            rotateAnimation.toValue = CGFloat(M_PI * 0.5)
+        }
         rotateAnimation.duration = duration
+        rotateAnimation.timingFunction = rotateAnimationCurve
         
         if let delegate: AnyObject = completionDelegate {
             rotateAnimation.delegate = delegate
         }
         self.layer.addAnimation(rotateAnimation, forKey: nil)
+    }
+    
+    func changeButtonColor() {
+        let colorAnimation = CABasicAnimation(keyPath: "transform.fill")
+        
+        backgroundCircleColor = UIColor.whiteColor()
+        plusColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
     }
 }

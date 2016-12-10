@@ -34,18 +34,43 @@ class BooleanTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func pressNoButton(sender: AnyObject) {
-        setActivityValue(booleanLabel.text!, date: NSDate(), boolInput: false, numInput: nil, moodInput: nil, dateInput: nil)
+    
+    @IBAction func touchDownNoButton(sender: AnyObject) {
         boolButtonYes.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
         boolButtonNo.layer.borderColor = UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).CGColor
         boolButtonNo.setTitleColor(UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ), forState: .Normal)
         boolButtonYes.setTitleColor(UIColor.blackColor(), forState: .Normal)
     }
-    @IBAction func pressYesButton(sender: AnyObject) {
+    
+    @IBAction func touchUpInsideNoButton(sender: AnyObject) {
+        setActivityValue(booleanLabel.text!, date: NSDate(), boolInput: false, numInput: nil, moodInput: nil, dateInput: nil)
+    }
+    
+    @IBAction func touchUpInsideYesButton(sender: AnyObject) {
         setActivityValue(booleanLabel.text!, date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
+    }
+    
+    @IBAction func touchDownYesButton(sender: AnyObject) {
         boolButtonNo.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
         boolButtonYes.layer.borderColor = UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).CGColor
         boolButtonYes.setTitleColor(UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ), forState: .Normal)
         boolButtonNo.setTitleColor(UIColor.blackColor(), forState: .Normal)
     }
+    
+    
+//    @IBAction func pressNoButton(sender: AnyObject) {
+//        setActivityValue(booleanLabel.text!, date: NSDate(), boolInput: false, numInput: nil, moodInput: nil, dateInput: nil)
+//        boolButtonYes.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
+//        boolButtonNo.layer.borderColor = UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).CGColor
+//        boolButtonNo.setTitleColor(UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ), forState: .Normal)
+//        boolButtonYes.setTitleColor(UIColor.blackColor(), forState: .Normal)
+//    }
+//    
+//    @IBAction func pressYesButton(sender: AnyObject) {
+//        setActivityValue(booleanLabel.text!, date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
+//        boolButtonNo.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
+//        boolButtonYes.layer.borderColor = UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).CGColor
+//        boolButtonYes.setTitleColor(UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ), forState: .Normal)
+//        boolButtonNo.setTitleColor(UIColor.blackColor(), forState: .Normal)
+//    }
 }
