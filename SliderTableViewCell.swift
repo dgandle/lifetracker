@@ -16,8 +16,6 @@ class SliderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -25,6 +23,8 @@ class SliderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
     
+    @IBAction func sliderValueChanged(sender: AnyObject) {
+        setActivityValue(sliderLabel.text!, date: NSDate(), boolInput: nil, numInput: nil, moodInput: Int(sliderSlider.value), dateInput: nil)
+    }
 }

@@ -129,6 +129,7 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         }else if(indexPath.row - 1 < numActivities.count+moodActivities.count){
             let cell = tableView.dequeueReusableCellWithIdentifier("sliderCell") as! SliderTableViewCell
             cell.sliderLabel.text = moodActivities[indexPath.row-1-numActivities.count].name
+            cell.sliderSlider.value = Float(getActivityValue(cell.sliderLabel.text!, date: NSDate()).moodVal!)
             return cell
         }
         else if(indexPath.row - 1 < numActivities.count+moodActivities.count+boolActivities.count){

@@ -47,7 +47,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-1I-FbP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-1I-FbP">
                                 <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.95686274509803915" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,6 +168,10 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" minimumValueImage="sliderSad" maximumValueImage="sliderHappy" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-6w-BA1">
                                                     <rect key="frame" x="30" y="37" width="315" height="31"/>
                                                     <color key="tintColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="sliderEditingDidEnd:" destination="OHJ-C8-sX0" eventType="editingDidEnd" id="AzN-PQ-4q6"/>
+                                                        <action selector="sliderValueChanged:" destination="OHJ-C8-sX0" eventType="valueChanged" id="wMA-Kb-637"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -786,6 +790,6 @@
         <image name="timeSelectButtonImageDark" width="100" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q41-kc-d3X"/>
+        <segue reference="gxl-y9-eau"/>
     </inferredMetricsTieBreakers>
 </document>
