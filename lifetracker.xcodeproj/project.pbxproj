@@ -16,11 +16,10 @@
 		913038211DD5126200885AE2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913038201DD5126200885AE2 /* DashboardViewController.swift */; };
 		913038231DD5126200885AE2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913038221DD5126200885AE2 /* DataViewController.swift */; };
 		913038261DD5126200885AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913038241DD5126200885AE2 /* Main.storyboard */; };
-		913038281DD5126200885AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 913038271DD5126200885AE2 /* Assets.xcassets */; };
 		9130382B1DD5126200885AE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913038291DD5126200885AE2 /* LaunchScreen.storyboard */; };
+		9136171B1DFF19D70002432C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9136171A1DFF19D70002432C /* Assets.xcassets */; };
 		915870541DEF7ED300486D65 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9130382C1DD5126200885AE2 /* Info.plist */; };
 		9170DCF41DF0CFCE00C5CDB4 /* AddNewActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170DCF31DF0CFCE00C5CDB4 /* AddNewActivityButton.swift */; };
-		9170DCF61DF0DBBB00C5CDB4 /* CancelNewActivityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170DCF51DF0DBBB00C5CDB4 /* CancelNewActivityButton.swift */; };
 		9170DCF81DF0E36700C5CDB4 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170DCF71DF0E36700C5CDB4 /* NavigationControllerDelegate.swift */; };
 		9170DCFA1DF0E43D00C5CDB4 /* CircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170DCF91DF0E43D00C5CDB4 /* CircleTransitionAnimator.swift */; };
 		9170DCFC1DF336D300C5CDB4 /* DashboardBackgroundCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170DCFB1DF336D300C5CDB4 /* DashboardBackgroundCircle.swift */; };
@@ -64,11 +63,10 @@
 		913038201DD5126200885AE2 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		913038221DD5126200885AE2 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		913038251DD5126200885AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		913038271DD5126200885AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9130382A1DD5126200885AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9130382C1DD5126200885AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9136171A1DFF19D70002432C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		9170DCF31DF0CFCE00C5CDB4 /* AddNewActivityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewActivityButton.swift; sourceTree = "<group>"; };
-		9170DCF51DF0DBBB00C5CDB4 /* CancelNewActivityButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelNewActivityButton.swift; sourceTree = "<group>"; };
 		9170DCF71DF0E36700C5CDB4 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		9170DCF91DF0E43D00C5CDB4 /* CircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionAnimator.swift; sourceTree = "<group>"; };
 		9170DCFB1DF336D300C5CDB4 /* DashboardBackgroundCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardBackgroundCircle.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				9170DCF31DF0CFCE00C5CDB4 /* AddNewActivityButton.swift */,
 				91D232DA1DFB3799001B6489 /* SelectActivityTypeButton.swift */,
 				9170DCFB1DF336D300C5CDB4 /* DashboardBackgroundCircle.swift */,
-				9170DCF51DF0DBBB00C5CDB4 /* CancelNewActivityButton.swift */,
 				913038241DD5126200885AE2 /* Main.storyboard */,
 				9170DCF71DF0E36700C5CDB4 /* NavigationControllerDelegate.swift */,
 				9170DCF91DF0E43D00C5CDB4 /* CircleTransitionAnimator.swift */,
@@ -136,7 +133,7 @@
 				91F30E4D1DDA512700A48F03 /* SliderTableViewCell.swift */,
 				91F6C44D1DD51628001731A3 /* HistoryViewController.swift */,
 				74D301FD1DDA007200F44F20 /* Database.swift */,
-				913038271DD5126200885AE2 /* Assets.xcassets */,
+				9136171A1DFF19D70002432C /* Assets.xcassets */,
 				91C12F701DEE3C3D00B59595 /* Resources */,
 				913038291DD5126200885AE2 /* LaunchScreen.storyboard */,
 				9130382C1DD5126200885AE2 /* Info.plist */,
@@ -218,11 +215,11 @@
 			files = (
 				91F7BFAC1DEF711C0034778A /* LaunchScreen.storyboard in Resources */,
 				9130382B1DD5126200885AE2 /* LaunchScreen.storyboard in Resources */,
-				913038281DD5126200885AE2 /* Assets.xcassets in Resources */,
 				91C12F6F1DEE3C1300B59595 /* NeuzeitGroT_Bold.ttf in Resources */,
 				91B49C8B1DEF7B16009573A3 /* SofiaProSemiBold.otf in Resources */,
 				913038261DD5126200885AE2 /* Main.storyboard in Resources */,
 				91C12F6E1DEE3C1100B59595 /* NeuzeitGroT.ttf in Resources */,
+				9136171B1DFF19D70002432C /* Assets.xcassets in Resources */,
 				915870541DEF7ED300486D65 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,7 +261,6 @@
 				91F6C4501DD5164B001731A3 /* SettingsViewController.swift in Sources */,
 				91F30E4C1DDA511D00A48F03 /* CounterTableViewCell.swift in Sources */,
 				91C12F721DEE4A8600B59595 /* TodayTableViewCell.swift in Sources */,
-				9170DCF61DF0DBBB00C5CDB4 /* CancelNewActivityButton.swift in Sources */,
 				9170DCF81DF0E36700C5CDB4 /* NavigationControllerDelegate.swift in Sources */,
 				91F6C44E1DD51628001731A3 /* HistoryViewController.swift in Sources */,
 			);

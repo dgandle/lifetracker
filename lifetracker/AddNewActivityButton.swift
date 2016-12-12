@@ -15,6 +15,7 @@ class AddNewActivityButton: UIButton {
     var degrees:CGFloat = 0
     var backgroundCircleColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
     var plusColor = UIColor.whiteColor()
+    var hasTransitioned = false;
 
     
     // Only override drawRect: if you perform custom drawing.
@@ -76,10 +77,10 @@ class AddNewActivityButton: UIButton {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         let rotateAnimationCurve = CAMediaTimingFunction(controlPoints: 0.1, 0.54, 0.53, 0.99)
         
-        if (plusColor == UIColor.whiteColor()) {
+        if (hasTransitioned == false) {
             rotateAnimation.fromValue = 0.0
             rotateAnimation.toValue = CGFloat(M_PI * 0.25)
-        } else if (backgroundCircleColor == UIColor.whiteColor()) {
+        } else {
             rotateAnimation.fromValue = CGFloat(M_PI * 0.25)
             rotateAnimation.toValue = CGFloat(M_PI * 0.5)
         }
@@ -90,12 +91,20 @@ class AddNewActivityButton: UIButton {
             rotateAnimation.delegate = delegate
         }
         self.layer.addAnimation(rotateAnimation, forKey: nil)
-    }
-    
-    func changeButtonColor() {
-        let colorAnimation = CABasicAnimation(keyPath: "transform.fill")
         
-        backgroundCircleColor = UIColor.whiteColor()
-        plusColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
+        //Animate Opacity
+//        let alphaAnimation = CABasicAnimation(keyPath: "opacity")
+//        alphaAnimation.fromValue = 0.0
+//        alphaAnimation.toValue = 1.0
+//        alphaAnimation.duration = duration
+//        self.layer.addAnimation(alphaAnimation, forKey: nil)
+        
+        //Animate Scale
+//        self.transform = CGAffineTransformMakeScale(0.0, 0.0)
+//
+//        UIView.animateWithDuration(0.3, delay: 0.0, options: [.CurveLinear], animations: { () -> Void in
+//            self.transform = CGAffineTransformMakeScale(1, 1)
+//        }) { (animationCompleted: Bool) -> Void in
+//        }
     }
 }

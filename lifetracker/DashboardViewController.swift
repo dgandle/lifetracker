@@ -52,9 +52,9 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         //addNewActivity("Time of Meal", type: "Date")
         //addNewActivity("Satisfaction Level", type: "Mood")
         //addNewActivity("Would I do it again", type: "Boolean")
-        addNewActivity("Naps Taken", type: "Number")
+        //addNewActivity("Naps Taken", type: "Number")
         //setActivityValue("Cups of Coffee Drank", date: NSDate(), boolInput: nil, numInput: 5000, moodInput: nil, dateInput: nil)
-        setActivityValue("Naps Taken", date: NSDate(), boolInput: nil, numInput: 99, moodInput: nil, dateInput: nil)
+        //setActivityValue("Naps Taken", date: NSDate(), boolInput: nil, numInput: 99, moodInput: nil, dateInput: nil)
         //setActivityValue("Time of Meal", date: NSDate(), boolInput: nil, numInput: nil, moodInput: nil, dateInput: NSDate())
         //setActivityValue("Satisfaction Level", date: NSDate(), boolInput: nil, numInput: nil, moodInput: 5, dateInput: nil)
         //setActivityValue("Would I do it again", date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
@@ -67,24 +67,35 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        var subviews : NSArray = self.view.subviews
-        for button : AnyObject in subviews{
-            if(button .isKindOfClass(UIButton)){
-                if(button.accessibilityIdentifier == "booleanSelectButton"){
-                    booleanSelectActivityButton.selected = true
-                    sliderSelectActivityButton.selected = false
-                    counterSelectActivityButton.selected = false
-                    timeSelectActivityButton.selected = false
-                    
-                    booleanSelectActivityButton?.alternateButton = [sliderSelectActivityButton!, counterSelectActivityButton!, timeSelectActivityButton!]
-                    sliderSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, counterSelectActivityButton!, timeSelectActivityButton!]
-                    counterSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, sliderSelectActivityButton!, timeSelectActivityButton!]
-                    timeSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, sliderSelectActivityButton!, counterSelectActivityButton!]
-                }else{
-                    //Don't load select button code
-                }
-            }
+        if (self.title == "Add New Activity") {
+            booleanSelectActivityButton.selected = true
+            sliderSelectActivityButton.selected = false
+            counterSelectActivityButton.selected = false
+            timeSelectActivityButton.selected = false
+            
+            booleanSelectActivityButton?.alternateButton = [sliderSelectActivityButton!, counterSelectActivityButton!, timeSelectActivityButton!]
+            sliderSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, counterSelectActivityButton!, timeSelectActivityButton!]
+            counterSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, sliderSelectActivityButton!, timeSelectActivityButton!]
+            timeSelectActivityButton?.alternateButton = [booleanSelectActivityButton!, sliderSelectActivityButton!, counterSelectActivityButton!]
+            
+            createNewActivityButton.enabled = false
+            createNewActivityButton.alpha = 0.7
+            
+            let border = CALayer()
+            let width = CGFloat(1.0)
+            border.borderColor = UIColor.whiteColor().CGColor
+            border.frame = CGRect(x: 0, y: newActivityName.frame.size.height - width, width:  newActivityName.frame.size.width, height: newActivityName.frame.size.height)
+            border.borderWidth = width
+            newActivityName.layer.addSublayer(border)
+            newActivityName.layer.masksToBounds = true
+            
+            addNewActivityButton.backgroundCircleColor = UIColor.whiteColor()
+            addNewActivityButton.plusColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
+
         }
+        
+        //Set inactive tab bar image to be white, not grey
+        self.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "dashboardIcon")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "dashboardIcon"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +104,6 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //temporary value
         return numActivities.count+dateActivities.count+moodActivities.count+boolActivities.count+1
     }
     
@@ -114,19 +124,8 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
             let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
             cell.counterLabel.text = numActivities[indexPath.row-1].name
             cell.counterValue.text = String(numActivities[indexPath.row-1].values.last!.value)
+            cell.counterStepper.value = Double(getActivityValue(cell.counterLabel.text!, date: NSDate()).numVal!)
             return cell
-//        }
-        
-        
-        
-        //Old Test Code
-//        if (indexPath.row == 0) {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("todayHeaderCell") as! TodayTableViewCell
-//            return cell
-//        } else if (indexPath.row == 1) {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
-//            cell.counterLabel.text = "Counter Cell"
-//            return cell
         }else if(indexPath.row - 1 < numActivities.count+moodActivities.count){
             let cell = tableView.dequeueReusableCellWithIdentifier("sliderCell") as! SliderTableViewCell
             cell.sliderLabel.text = moodActivities[indexPath.row-1-numActivities.count].name
@@ -140,6 +139,11 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         else{//case that it is a date cell
             let cell = tableView.dequeueReusableCellWithIdentifier("timeCell") as! TimeTableViewCell
             cell.timeLabel.text = dateActivities[indexPath.row-1-(numActivities.count+moodActivities.count+boolActivities.count)].name
+            let timeFormatter = NSDateFormatter()
+            timeFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            let time = dateActivities[indexPath.row-1-(numActivities.count+moodActivities.count+boolActivities.count)].values.last!.value
+            cell.timeValue.text = timeFormatter.stringFromDate(time)
+            cell.datePicker.date = time
             return cell
         }
     }
@@ -160,6 +164,58 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     @IBAction func onTapGestureRecognized(sender: AnyObject) {
         searchBar.resignFirstResponder()
     }
+    
+    @IBAction func onTapGestureRecognizedTwo(sender: AnyObject) {
+        newActivityName.resignFirstResponder()
+    }
+    
+    
+    
+    @IBAction func createNewActivityButtonPressed(sender: AnyObject) {
+        let name = newActivityName.text!
+        
+        if (nameExistsAlready(name).exists) {
+            let alertController = UIAlertController(title: "Error", message:
+                "An activity with that name already exists.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        if (booleanSelectActivityButton.selected) {
+            addNewActivity(newActivityName.text!, type: "Boolean")
+        } else if (sliderSelectActivityButton.selected) {
+            addNewActivity(newActivityName.text!, type: "Mood")
+        } else if (counterSelectActivityButton.selected) {
+            addNewActivity(newActivityName.text!, type: "Number")
+        } else if (timeSelectActivityButton.selected) {
+            addNewActivity(newActivityName.text!, type: "Date")
+        }
+    }
+
+    @IBAction func newActNameEditingChanged(sender: AnyObject) {
+        if (newActivityName.text!.isEmpty == false) {
+            createNewActivityButton.enabled = true
+            createNewActivityButton.alpha = 1
+        } else {
+            createNewActivityButton.enabled = false
+            createNewActivityButton.alpha = 0.7
+        }
+    }
+    
+    @IBAction func newActNameEditingDIdEnd(sender: AnyObject) {
+        if (newActivityName.text!.isEmpty == false) {
+            createNewActivityButton.enabled = true
+            createNewActivityButton.alpha = 1
+        } else {
+            createNewActivityButton.enabled = false
+            createNewActivityButton.alpha = 0.7
+        }
+    }
+    
+    @IBAction func unwindToDashboard(sender: UIStoryboardSegue) {
+        
+    }
+    
     
     
     /*

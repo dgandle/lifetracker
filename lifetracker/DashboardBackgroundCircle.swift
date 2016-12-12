@@ -21,5 +21,24 @@ class DashboardBackgroundCircle: UIView {
         path.fill()
     }
  
+    func moveBackgroundCircle(duration: CFTimeInterval = 0.6, completionDelegate: AnyObject? = nil) {
+        
+        let moveAnimation = CABasicAnimation(keyPath: "transform.translation.y")
+        let moveAnimationCurve = CAMediaTimingFunction(controlPoints: 0.1, 0.54, 0.53, 0.99)
+        moveAnimation.fromValue = 0.0
+        moveAnimation.toValue = -155.0
+        moveAnimation.duration = duration
+        moveAnimation.removedOnCompletion = false
+        moveAnimation.timingFunction = moveAnimationCurve
+        moveAnimation.fillMode = kCAFillModeForwards;
+        
+        
+        if let delegate: AnyObject = completionDelegate {
+            moveAnimation.delegate = delegate
+        }
+        self.layer.addAnimation(moveAnimation, forKey: nil)
+        
+    }
 
+    
 }

@@ -16,6 +16,7 @@ class BooleanTableViewCell: UITableViewCell {
     
     @IBOutlet weak var booleanLabel: UILabel!
     
+    var isButtonSelected = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,10 +37,12 @@ class BooleanTableViewCell: UITableViewCell {
 
     
     @IBAction func touchDownNoButton(sender: AnyObject) {
-        boolButtonYes.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
-        boolButtonNo.layer.borderColor = UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).CGColor
-        boolButtonNo.setTitleColor(UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ), forState: .Normal)
-        boolButtonYes.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        boolButtonNo.backgroundColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 0.125 )
+        boolButtonNo.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
+        boolButtonNo.setTitleColor(UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ), forState: .Normal)
+        boolButtonYes.setTitleColor(UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 0.25 ), forState: .Normal)
+        boolButtonYes.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 0.25 ).CGColor
+        boolButtonYes.backgroundColor = UIColor.whiteColor()
     }
     
     @IBAction func touchUpInsideNoButton(sender: AnyObject) {
@@ -51,10 +54,13 @@ class BooleanTableViewCell: UITableViewCell {
     }
     
     @IBAction func touchDownYesButton(sender: AnyObject) {
-        boolButtonNo.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 1.0 ).CGColor
         boolButtonYes.layer.borderColor = UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ).CGColor
         boolButtonYes.setTitleColor(UIColor( red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0 ), forState: .Normal)
-        boolButtonNo.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        boolButtonYes.backgroundColor = UIColor( red: 226/255, green: 247/255, blue: 233/255, alpha: 0.5 )
+        boolButtonNo.setTitleColor(UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 0.25 ), forState: .Normal)
+        boolButtonNo.layer.borderColor = UIColor( red: 149/255, green: 152/255, blue: 154/255, alpha: 0.25 ).CGColor
+        boolButtonNo.backgroundColor = UIColor.whiteColor()
+        //boolButtonNo.enabled = false
     }
     
     
