@@ -23,5 +23,8 @@ class SliderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func sliderValueChanged(sender: AnyObject) {
+        setActivityValue(sliderLabel.text!, date: NSDate(), boolInput: nil, numInput: nil, moodInput: Int(sliderSlider.value), dateInput: nil)
+    }
 }

@@ -15,8 +15,13 @@
             <string>NeuzeitGroT-Regu</string>
             <string>NeuzeitGroT-Regu</string>
             <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
+            <string>NeuzeitGroT-Regu</string>
         </mutableArray>
         <mutableArray key="NeuzeitGroT_Bold.ttf">
+            <string>NeuzeitGroT-Bold</string>
+            <string>NeuzeitGroT-Bold</string>
             <string>NeuzeitGroT-Bold</string>
             <string>NeuzeitGroT-Bold</string>
         </mutableArray>
@@ -42,6 +47,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-1I-FbP">
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pxK-1I-FbP">
                                 <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -52,16 +58,16 @@
                                         <rect key="frame" x="0.0" y="1" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Qs-hD-eAk" id="ZFI-Tb-jQu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgc-c7-RNP">
-                                                    <rect key="frame" x="15" y="10" width="344" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="344" height="25"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-4K-dvf">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wv-4K-dvf">
                                                     <rect key="frame" x="211" y="43" width="94" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -77,10 +83,11 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="pressYesButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="Ced-w0-tyB"/>
+                                                        <action selector="touchDownYesButton:" destination="5Qs-hD-eAk" eventType="touchDown" id="xkx-Ju-4Tw"/>
+                                                        <action selector="touchUpInsideYesButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="yHs-2W-o9u"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Za-LXh">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Za-LXh">
                                                     <rect key="frame" x="71" y="43" width="94" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -94,7 +101,8 @@
                                                         <color key="titleColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="pressNoButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="hJy-ga-pVJ"/>
+                                                        <action selector="touchDownNoButton:" destination="5Qs-hD-eAk" eventType="touchDown" id="keG-lQ-zOn"/>
+                                                        <action selector="touchUpInsideNoButton:" destination="5Qs-hD-eAk" eventType="touchUpInside" id="a2A-Ms-pSP"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -113,11 +121,11 @@
                                         <rect key="frame" x="0.0" y="91" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEB-lj-XRg" id="tQi-Mm-lb6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvP-Wr-1lD">
-                                                    <rect key="frame" x="15" y="10" width="336" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="336" height="25"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -128,7 +136,7 @@
                                                     <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" minimumValue="-10000" maximumValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-17-mim">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-17-mim">
                                                     <rect key="frame" x="257" y="43" width="94" height="29"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="tintColor" red="0.22745098039215686" green="0.77254901960784317" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,17 +157,22 @@
                                         <rect key="frame" x="0.0" y="181" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OHJ-C8-sX0" id="NIC-2M-0BT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK8-t3-zY4">
-                                                    <rect key="frame" x="15" y="8" width="137" height="21"/>
+                                                    <rect key="frame" x="15" y="8" width="343" height="21"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-6w-BA1">
-                                                    <rect key="frame" x="39" y="37" width="296" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" minimumValueImage="sliderSad" maximumValueImage="sliderHappy" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-6w-BA1">
+                                                    <rect key="frame" x="30" y="37" width="315" height="31"/>
+                                                    <color key="tintColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="sliderEditingDidEnd:" destination="OHJ-C8-sX0" eventType="editingDidEnd" id="AzN-PQ-4q6"/>
+                                                        <action selector="sliderValueChanged:" destination="OHJ-C8-sX0" eventType="valueChanged" id="wMA-Kb-637"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -173,25 +186,58 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2s-Y7-ObS" id="ObX-CV-ITk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq1-Ub-yjh">
-                                                    <rect key="frame" x="15" y="8" width="173" height="21"/>
+                                                    <rect key="frame" x="15" y="8" width="345" height="29"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="20"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86c-Xw-jj1">
-                                                    <rect key="frame" x="33" y="37" width="94" height="39"/>
+                                                    <rect key="frame" x="33" y="37" width="210" height="39"/>
                                                     <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="32"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="xJc-yJ-Vdo">
+                                                    <rect key="frame" x="15" y="35" width="228" height="44.5"/>
+                                                    <color key="tintColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="503210560.40922201">
+                                                        <!--2016-12-12 04:42:40 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BR9-GZ-LTM">
+                                                    <rect key="frame" x="258" y="43" width="94" height="30"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="94" id="1gR-kO-aOP"/>
+                                                        <constraint firstAttribute="height" constant="30" id="MZZ-xF-A1N"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="18"/>
+                                                    <color key="tintColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="EDIT">
+                                                        <color key="titleColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <state key="selected">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="editButtonTouchUpInside:" destination="z2s-Y7-ObS" eventType="touchUpInside" id="GU6-yw-tLk"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="datePicker" destination="xJc-yJ-Vdo" id="dq4-zO-PPJ"/>
+                                            <outlet property="editButton" destination="BR9-GZ-LTM" id="fur-6K-aC5"/>
                                             <outlet property="timeLabel" destination="Uq1-Ub-yjh" id="ra9-J6-Cp9"/>
                                             <outlet property="timeValue" destination="86c-Xw-jj1" id="vKx-gm-SbG"/>
                                         </connections>
@@ -200,7 +246,7 @@
                                         <rect key="frame" x="0.0" y="361" width="375" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BKd-E6-JUy" id="RIj-2W-ae9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-H1-7tU">
@@ -279,10 +325,10 @@
             </objects>
             <point key="canvasLocation" x="1544.5" y="-1271.5"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Add New Activity-->
         <scene sceneID="XJZ-P4-HzV">
             <objects>
-                <viewController id="csE-Kq-6ib" customClass="DashboardViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add New Activity" id="csE-Kq-6ib" customClass="DashboardViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cZq-em-Z8B"/>
                         <viewControllerLayoutGuide type="bottom" id="TWf-Vp-ujt"/>
@@ -302,62 +348,153 @@
                                     <action selector="circleTapped:" destination="csE-Kq-6ib" eventType="touchUpInside" id="Mft-7g-3DR"/>
                                 </connections>
                             </button>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEh-xc-ehG" customClass="DashboardBackgroundCircle" customModule="lifetracker" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your new activity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-cO-iCs">
+                                <rect key="frame" x="15" y="63" width="345" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="Q4c-l4-huR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEh-xc-ehG" customClass="DashboardBackgroundCircle" customModule="lifetracker" customModuleProvider="target">
                                 <rect key="frame" x="-357" y="-112" width="667" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-cO-iCs">
-                                <rect key="frame" x="121" y="32" width="131" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBU-QG-kXw" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="226" y="230" width="100" height="134"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sliderSelectButton"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="slider" backgroundImage="sliderSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="sliderSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGK-eF-6Eq" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="50" y="388" width="100" height="134"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="counter" backgroundImage="counterSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="counterSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-d2-Taf" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="50" y="230" width="100" height="134"/>
+                                <accessibility key="accessibilityConfiguration" identifier="booleanSelectButton"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="yes/no" backgroundImage="booleanSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="booleanSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" title="yes/no" backgroundImage="booleanSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="focused">
+                                    <color key="titleColor" red="0.1450980392" green="0.17254901959999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7V-0m-ZpU" customClass="SelectActivityTypeButton" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="226" y="388" width="100" height="134"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="time" backgroundImage="timeSelectButtonImageDark">
+                                    <color key="titleColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="timeSelectButtonImage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpR-eC-4VB">
+                                <rect key="frame" x="50" y="557" width="275" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="18"/>
+                                <color key="tintColor" white="0.65000000000000002" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal" title="ADD NEW ACTIVITY">
+                                    <color key="titleColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createNewActivityButtonPressed:" destination="csE-Kq-6ib" eventType="touchUpInside" id="N8Z-R4-7Mt"/>
+                                    <segue destination="9pv-A4-QxB" kind="show" id="gxl-y9-eau"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose an activity type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGD-ab-XFK">
+                                <rect key="frame" x="15" y="180" width="345" height="28"/>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Bold" family="NeuzeitGroT" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-d2-Taf">
-                                <rect key="frame" x="78" y="223" width="49" height="30"/>
-                                <state key="normal" title="Yes/No"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBU-QG-kXw">
-                                <rect key="frame" x="253" y="223" width="40" height="30"/>
-                                <state key="normal" title="Slider"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGK-eF-6Eq">
-                                <rect key="frame" x="74" y="288" width="56" height="30"/>
-                                <state key="normal" title="Counter"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7V-0m-ZpU">
-                                <rect key="frame" x="259" y="288" width="34" height="30"/>
-                                <state key="normal" title="Time"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpR-eC-4VB">
-                                <rect key="frame" x="122" y="399" width="130" height="30"/>
-                                <state key="normal" title="Create New Object"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2aL-Yi-5XJ">
-                                <rect key="frame" x="79" y="107" width="216" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="cups of coffee, bedtime, etc..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2aL-Yi-5XJ">
+                                <rect key="frame" x="50" y="110" width="275" height="30"/>
+                                <color key="tintColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="NeuzeitGroT-Regu" family="NeuzeitGroT" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer." value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newActNameEditingChanged:" destination="csE-Kq-6ib" eventType="editingChanged" id="d2P-rK-Cvb"/>
+                                    <action selector="newActNameEditingDIdEnd:" destination="csE-Kq-6ib" eventType="editingDidEnd" id="Eu8-zX-bs6"/>
+                                    <action selector="textFieldDoneEditing:" destination="csE-Kq-6ib" eventType="editingDidEndOnExit" id="qVH-kf-DxM"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ozT-cO-iCs" firstAttribute="centerY" secondItem="DAT-9J-Kvc" secondAttribute="centerY" id="kuo-xV-bXZ"/>
-                            <constraint firstItem="ozT-cO-iCs" firstAttribute="centerX" secondItem="DAT-9J-Kvc" secondAttribute="centerX" id="z3p-iZ-zAj"/>
+                            <constraint firstItem="ozT-cO-iCs" firstAttribute="leading" secondItem="DAT-9J-Kvc" secondAttribute="leading" constant="15" id="nsB-ji-Vuz"/>
+                            <constraint firstItem="ozT-cO-iCs" firstAttribute="top" secondItem="DAT-9J-Kvc" secondAttribute="topMargin" constant="63" id="u3w-KP-kBu"/>
+                            <constraint firstItem="ozT-cO-iCs" firstAttribute="centerX" secondItem="DAT-9J-Kvc" secondAttribute="centerX" id="vgl-uu-ayH"/>
+                            <constraint firstItem="ozT-cO-iCs" firstAttribute="leading" secondItem="DAT-9J-Kvc" secondAttribute="leadingMargin" constant="-5" id="zZX-6l-CR3"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="xEh-xc-ehG"/>
+                            <mask key="constraints">
+                                <exclude reference="vgl-uu-ayH"/>
+                                <exclude reference="zZX-6l-CR3"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wbn-8J-Lq1" appends="YES" id="UjS-9D-upV"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addNewActivityButton" destination="VUR-Hu-sy1" id="bmp-FF-qwn"/>
                         <outlet property="backgroundCircle" destination="xEh-xc-ehG" id="0vx-I6-sl3"/>
+                        <outlet property="booleanSelectActivityButton" destination="NOV-d2-Taf" id="oQG-wz-T14"/>
+                        <outlet property="counterSelectActivityButton" destination="nGK-eF-6Eq" id="A4f-w5-Bxg"/>
                         <outlet property="createNewActivityButton" destination="kpR-eC-4VB" id="XJz-Na-zrE"/>
                         <outlet property="newActivityName" destination="2aL-Yi-5XJ" id="xIH-vW-HBY"/>
+                        <outlet property="sliderSelectActivityButton" destination="xBU-QG-kXw" id="w8d-qo-9uL"/>
+                        <outlet property="timeSelectActivityButton" destination="K7V-0m-ZpU" id="BDb-UN-gd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tje-Ii-dZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wbn-8J-Lq1">
+                    <connections>
+                        <action selector="onTapGestureRecognizedTwo:" destination="csE-Kq-6ib" id="Ypp-AT-hC1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2023.5" y="-1271.5"/>
         </scene>
@@ -490,10 +627,10 @@
             </objects>
             <point key="canvasLocation" x="2334" y="431"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="98j-dD-zE0">
             <objects>
-                <viewController id="CbO-D1-1TW" customClass="SettingsViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="CbO-D1-1TW" customClass="SettingsViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Me2-cI-HIG"/>
                         <viewControllerLayoutGuide type="bottom" id="JKR-eF-WAF"/>
@@ -501,15 +638,123 @@
                     <view key="view" contentMode="scaleToFill" id="uTY-M0-qBm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XzQ-eY-5Xs">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="editActivityListCell" id="sy5-uH-zW9">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sy5-uH-zW9" id="q8l-9h-pGh">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Activity List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-oD-J8N">
+                                                    <rect key="frame" x="15" y="5" width="207" height="32.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="MfL-iE-MX2" kind="show" id="D1C-PV-dBf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CbO-D1-1TW" id="LnE-Ie-2hV"/>
+                                    <outlet property="delegate" destination="CbO-D1-1TW" id="uU1-HB-xU2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.2274509804" green="0.7725490196" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XzQ-eY-5Xs" firstAttribute="leading" secondItem="uTY-M0-qBm" secondAttribute="leading" id="6lm-GN-tMR"/>
+                            <constraint firstItem="JKR-eF-WAF" firstAttribute="top" secondItem="XzQ-eY-5Xs" secondAttribute="bottom" id="FHa-dY-tg2"/>
+                            <constraint firstItem="XzQ-eY-5Xs" firstAttribute="top" secondItem="uTY-M0-qBm" secondAttribute="top" constant="20" id="gFM-3w-VjT"/>
+                            <constraint firstAttribute="trailing" secondItem="XzQ-eY-5Xs" secondAttribute="trailing" id="inU-Z0-zub"/>
+                            <constraint firstItem="XzQ-eY-5Xs" firstAttribute="top" secondItem="uTY-M0-qBm" secondAttribute="top" constant="20" symbolic="YES" id="sfb-1r-1Rm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="sfb-1r-1Rm"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Settings 3-48" selectedImage="Settings 3-48" id="3Jd-I4-RDd">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Settings" id="4T1-nm-oAl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Loo-mv-oom" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="931"/>
+            <point key="canvasLocation" x="1170" y="1275"/>
+        </scene>
+        <!--Edit-Activity-List-->
+        <scene sceneID="TN9-Bf-SmT">
+            <objects>
+                <viewController title="Edit-Activity-List" id="MfL-iE-MX2" customClass="SettingsViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mqe-UN-X7l"/>
+                        <viewControllerLayoutGuide type="bottom" id="1FE-bh-vsZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IDy-yI-c0b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-Ru-zoT">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="basicTableViewCell" textLabel="ZrZ-Ls-cGX" style="IBUITableViewCellStyleDefault" id="n0R-EJ-S0I">
+                                        <rect key="frame" x="0.0" y="65" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n0R-EJ-S0I" id="a5T-8o-v1F">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZrZ-Ls-cGX">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MfL-iE-MX2" id="qhf-qQ-dkK"/>
+                                    <outlet property="delegate" destination="MfL-iE-MX2" id="6ts-0z-BUI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1FE-bh-vsZ" firstAttribute="top" secondItem="4Np-Ru-zoT" secondAttribute="bottom" constant="359" id="P1T-RF-GOY"/>
+                            <constraint firstItem="4Np-Ru-zoT" firstAttribute="top" secondItem="Mqe-UN-X7l" secondAttribute="bottom" constant="8" symbolic="YES" id="bND-t6-8cg"/>
+                            <constraint firstItem="4Np-Ru-zoT" firstAttribute="top" secondItem="IDy-yI-c0b" secondAttribute="top" constant="20" id="h41-12-hfR"/>
+                            <constraint firstItem="1FE-bh-vsZ" firstAttribute="top" secondItem="4Np-Ru-zoT" secondAttribute="bottom" id="q5M-pI-btd"/>
+                            <constraint firstItem="4Np-Ru-zoT" firstAttribute="leading" secondItem="IDy-yI-c0b" secondAttribute="leading" id="qbk-vY-mhh"/>
+                            <constraint firstAttribute="trailing" secondItem="4Np-Ru-zoT" secondAttribute="trailing" id="taa-dj-tmt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bND-t6-8cg"/>
+                                <exclude reference="P1T-RF-GOY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Activity List" id="O2j-mp-0D7"/>
+                    <connections>
+                        <outlet property="editListTableView" destination="4Np-Ru-zoT" id="pmF-DC-vtC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKu-au-lF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="1275"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -523,9 +768,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="wAW-tF-1Qf" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="uRW-3x-1gA" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="CbO-D1-1TW" kind="relationship" relationship="viewControllers" id="xKZ-bJ-kKR"/>
-                        <segue destination="Uo4-vb-g1d" kind="relationship" relationship="viewControllers" id="qAV-rO-efo"/>
+                        <segue destination="gLS-Dn-084" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="pMi-mY-Ps8" kind="relationship" relationship="viewControllers" id="c1A-8w-4Th"/>
+                        <segue destination="jRk-Gh-eIO" kind="relationship" relationship="viewControllers" id="xKZ-bJ-kKR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -536,7 +781,7 @@
         <scene sceneID="k8a-ey-Rgq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wAW-tF-1Qf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="dashboardIcon" selectedImage="dashboardIcon" id="acW-dT-cKf">
+                    <tabBarItem key="tabBarItem" title="" image="dashboardIcon" selectedImage="dashboardIconSelected" id="acW-dT-cKf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -558,8 +803,8 @@
         <!--Navigation Controller-->
         <scene sceneID="ApQ-Bt-cYk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uRW-3x-1gA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Area Chart-48" selectedImage="Area Chart-48" id="cPa-gy-q4n">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pMi-mY-Ps8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="historyIcon" selectedImage="historyIconSelected" id="sFU-1v-Tym">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -574,33 +819,73 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdG-Pj-xz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="-424"/>
+            <point key="canvasLocation" x="1130" y="419"/>
         </scene>
-        <!--History-->
-        <scene sceneID="cVm-vj-RM0">
+        <!--Navigation Controller-->
+        <scene sceneID="f3F-Cm-bJK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uo4-vb-g1d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="Transaction List-64" selectedImage="Transaction List-64" id="rGZ-dw-m7Y"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gLS-Dn-084" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="dataIcon" selectedImage="dataIconSelected" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jJO-UU-SyM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xxh-ny-uh7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="KMG-Sk-KfE" kind="relationship" relationship="rootViewController" id="6Yd-JT-Ktq"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="dZ0-Yx-QQH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GYd-Y0-4iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="blH-F7-f98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="431"/>
+            <point key="canvasLocation" x="1430" y="-424"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="thp-Dd-qrE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jRk-Gh-eIO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="settingsIcon" selectedImage="settingsIconSelected" id="3Jd-I4-RDd">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WPd-Lc-0Lz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CbO-D1-1TW" kind="relationship" relationship="rootViewController" id="SOM-BI-8sy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8It-CC-2S8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394" y="1283"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Area Chart-48" width="32" height="32"/>
-        <image name="Settings 3-48" width="32" height="32"/>
-        <image name="Transaction List-64" width="32" height="32"/>
+        <image name="booleanSelectButtonImage" width="100" height="134"/>
+        <image name="booleanSelectButtonImageDark" width="100" height="134"/>
+        <image name="counterSelectButtonImage" width="100" height="134"/>
+        <image name="counterSelectButtonImageDark" width="100" height="134"/>
         <image name="dashboardBackground" width="375" height="667"/>
         <image name="dashboardIcon" width="24" height="24"/>
+        <image name="dashboardIconSelected" width="24" height="24"/>
+        <image name="dataIcon" width="32" height="32"/>
+        <image name="dataIconSelected" width="32" height="32"/>
+        <image name="historyIcon" width="32" height="32"/>
+        <image name="historyIconSelected" width="32" height="32"/>
+        <image name="settingsIcon" width="32" height="32"/>
+        <image name="settingsIconSelected" width="32" height="32"/>
+        <image name="sliderHappy" width="30" height="30"/>
+        <image name="sliderSad" width="30" height="30"/>
+        <image name="sliderSelectButtonImage" width="100" height="134"/>
+        <image name="sliderSelectButtonImageDark" width="100" height="134"/>
+        <image name="timeSelectButtonImage" width="100" height="134"/>
+        <image name="timeSelectButtonImageDark" width="100" height="134"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gxl-y9-eau"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tbController.tabBar.translucent = false
         tbController.tabBar.tintColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
         
+        UINavigationBar.appearance().tintColor = UIColor(red: 15/255, green: 17/255, blue: 26/255, alpha: 1.0)
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 244/255, green: 245/255, blue: 249/255, alpha: 1.0)
+        
         return true
     }
 
