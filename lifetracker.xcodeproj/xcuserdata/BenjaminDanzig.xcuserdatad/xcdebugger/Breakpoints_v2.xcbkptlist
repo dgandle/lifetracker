@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "lifetracker/Database.swift"
-            timestampString = "502235310.255489"
+            timestampString = "503101848.676291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "setActivityValue(_:date:boolInput:numInput:moodInput:dateInput:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "lifetracker/Database.swift"
-            timestampString = "502665538.784195"
+            timestampString = "503101848.676291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "474"
-            endingLineNumber = "474"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
             landmarkName = "initDB()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "lifetracker/Database.swift"
-            timestampString = "502665538.784195"
+            timestampString = "503101848.676291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "incrementNumActivity(_:date:incVal:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,15 +54,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "lifetracker/Database.swift"
-            timestampString = "502665848.223179"
+            timestampString = "503101848.676291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "466"
-            endingLineNumber = "466"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
             landmarkName = "incrementNumActivity(_:date:incVal:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -149,7 +149,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CounterTableViewCell.swift"
@@ -168,13 +168,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "lifetracker/DashboardViewController.swift"
-            timestampString = "502928293.921475"
+            filePath = "BooleanTableViewCell.swift"
+            timestampString = "502929913.844043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "pressNoButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -184,13 +184,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BooleanTableViewCell.swift"
-            timestampString = "502929913.844043"
+            filePath = "lifetracker/ChartViewController.swift"
+            timestampString = "503249614.838773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "pressNoButton(_:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setChart(_:values:yLabel:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NeuzeitGroT.ttf">
@@ -308,7 +309,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add New Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozT-cO-iCs">
                                 <rect key="frame" x="121" y="32" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOV-d2-Taf">
@@ -364,22 +365,88 @@
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="DataViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Area Chart-48" selectedImage="Area Chart-48" id="cPa-gy-q4n">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gcf-rP-j15">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" id="55g-Jt-hgj" customClass="DataTableViewCell" customModule="lifetracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55g-Jt-hgj" id="YhI-6l-UoJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-Gk-9iD">
+                                            <rect key="frame" x="529" y="11" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ActivityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whF-fv-Kzp">
+                                            <rect key="frame" x="21" y="11" width="102" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="whF-fv-Kzp" firstAttribute="top" secondItem="YhI-6l-UoJ" secondAttribute="topMargin" constant="5" id="3Wq-7D-4D8"/>
+                                        <constraint firstItem="whF-fv-Kzp" firstAttribute="leading" secondItem="YhI-6l-UoJ" secondAttribute="leadingMargin" constant="20" id="Tqc-9M-MzL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityName" destination="whF-fv-Kzp" id="TAe-lv-C7n"/>
+                                    <outlet property="activityType" destination="KcG-Gk-9iD" id="wAt-Fb-UFE"/>
+                                    <segue destination="ppm-hj-8Ed" kind="show" id="3yg-pu-Xlx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8rJ-Kc-sve" id="YfB-dI-4tI"/>
+                            <outlet property="delegate" destination="8rJ-Kc-sve" id="LOK-RC-Lmo"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="uEn-QZ-iVx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="-424"/>
+            <point key="canvasLocation" x="2242" y="-527"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="KGA-43-RxL">
+            <objects>
+                <viewController storyboardIdentifier="chartViewController" id="ppm-hj-8Ed" customClass="ChartViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mLB-Ih-gNo"/>
+                        <viewControllerLayoutGuide type="bottom" id="PiG-ay-BJx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mb4-47-nEG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04w-dW-bME" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="64" width="560" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="04w-dW-bME" firstAttribute="leading" secondItem="mb4-47-nEG" secondAttribute="leadingMargin" id="DCE-fv-V1W"/>
+                            <constraint firstItem="04w-dW-bME" firstAttribute="top" secondItem="mLB-Ih-gNo" secondAttribute="bottom" id="UbF-0t-v6g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="04w-dW-bME" secondAttribute="trailing" id="b78-he-QP6"/>
+                            <constraint firstItem="PiG-ay-BJx" firstAttribute="top" secondItem="04w-dW-bME" secondAttribute="bottom" id="ynw-oc-ffj"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <connections>
+                        <outlet property="barChartView" destination="04w-dW-bME" id="mqD-8O-JFi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Avn-ZM-1lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2954" y="-424"/>
         </scene>
         <!--History-->
         <scene sceneID="FDq-OM-lPC">
@@ -429,7 +496,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="wAW-tF-1Qf" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="uRW-3x-1gA" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="pMi-mY-Ps8" kind="relationship" relationship="viewControllers" id="c1A-8w-4Th"/>
                         <segue destination="CbO-D1-1TW" kind="relationship" relationship="viewControllers" id="xKZ-bJ-kKR"/>
                     </connections>
@@ -481,6 +548,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRc-xm-Hs3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1430" y="419"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ApQ-Bt-cYk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uRW-3x-1gA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Area Chart-48" selectedImage="Area Chart-48" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EoJ-7n-baM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="u5e-W4-q2C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdG-Pj-xz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="-424"/>
         </scene>
     </scenes>
     <resources>

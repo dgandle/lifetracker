@@ -47,9 +47,9 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
         //addNewActivity("Time of Meal", type: "Date")
         //addNewActivity("Satisfaction Level", type: "Mood")
         //addNewActivity("Would I do it again", type: "Boolean")
-        addNewActivity("Naps Taken", type: "Number")
+        //addNewActivity("Naps Taken", type: "Number")
         //setActivityValue("Cups of Coffee Drank", date: NSDate(), boolInput: nil, numInput: 5000, moodInput: nil, dateInput: nil)
-        setActivityValue("Naps Taken", date: NSDate(), boolInput: nil, numInput: 99, moodInput: nil, dateInput: nil)
+        //setActivityValue("Naps Taken", date: NSDate(), boolInput: nil, numInput: 99, moodInput: nil, dateInput: nil)
         //setActivityValue("Time of Meal", date: NSDate(), boolInput: nil, numInput: nil, moodInput: nil, dateInput: NSDate())
         //setActivityValue("Satisfaction Level", date: NSDate(), boolInput: nil, numInput: nil, moodInput: 5, dateInput: nil)
         //setActivityValue("Would I do it again", date: NSDate(), boolInput: true, numInput: nil, moodInput: nil, dateInput: nil)
@@ -74,9 +74,6 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        searchBar.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
-        
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("todayHeaderCell") as! TodayTableViewCell
             return cell
@@ -85,18 +82,6 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
             cell.counterLabel.text = numActivities[indexPath.row-1].name
             cell.counterValue.text = String(numActivities[indexPath.row-1].values.last!.value)
             return cell
-//        }
-        
-        
-        
-        //Old Test Code
-//        if (indexPath.row == 0) {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("todayHeaderCell") as! TodayTableViewCell
-//            return cell
-//        } else if (indexPath.row == 1) {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
-//            cell.counterLabel.text = "Counter Cell"
-//            return cell
         }else if(indexPath.row - 1 < numActivities.count+moodActivities.count){
             let cell = tableView.dequeueReusableCellWithIdentifier("sliderCell") as! SliderTableViewCell
             cell.sliderLabel.text = moodActivities[indexPath.row-1-numActivities.count].name
