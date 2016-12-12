@@ -448,20 +448,47 @@
             </objects>
             <point key="canvasLocation" x="2954" y="-424"/>
         </scene>
-        <!--History-->
-        <scene sceneID="FDq-OM-lPC">
+        <!--History View Controller-->
+        <scene sceneID="7Ag-on-2Zu">
             <objects>
-                <viewController id="tc4-b9-5bA" customClass="HistoryViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mox-vO-f4W">
+                <viewController id="KMG-Sk-KfE" customClass="HistoryViewController" customModule="lifetracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qVr-Sx-hZH"/>
+                        <viewControllerLayoutGuide type="bottom" id="nXG-fo-8Pt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="int-9k-3uj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-01-Il0">
+                                <rect key="frame" x="140" y="64" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="503258764.07711798">
+                                    <!--2016-12-12 18:06:04 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBh-q5-GkX">
+                                <rect key="frame" x="207" y="444" width="173" height="30"/>
+                                <state key="normal" title="Edit History On This Date"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="KMG-Sk-KfE" eventType="touchUpInside" id="2Cd-Xp-vBM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="History" id="Vkb-bu-PfU"/>
+                        <constraints>
+                            <constraint firstItem="Yl6-01-Il0" firstAttribute="centerX" secondItem="int-9k-3uj" secondAttribute="centerX" id="Dq0-qc-nRs"/>
+                            <constraint firstItem="Yl6-01-Il0" firstAttribute="top" secondItem="qVr-Sx-hZH" secondAttribute="bottom" id="SeN-c2-VbR"/>
+                            <constraint firstItem="JBh-q5-GkX" firstAttribute="centerX" secondItem="int-9k-3uj" secondAttribute="centerX" id="vTw-7z-TXj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EfR-o6-FEq"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Yl6-01-Il0" id="1VK-iM-z9t"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w1l-3Y-LcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDb-5X-XQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="419"/>
+            <point key="canvasLocation" x="2334" y="431"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="98j-dD-zE0">
@@ -497,8 +524,8 @@
                     <connections>
                         <segue destination="wAW-tF-1Qf" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="uRW-3x-1gA" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="pMi-mY-Ps8" kind="relationship" relationship="viewControllers" id="c1A-8w-4Th"/>
                         <segue destination="CbO-D1-1TW" kind="relationship" relationship="viewControllers" id="xKZ-bJ-kKR"/>
+                        <segue destination="Uo4-vb-g1d" kind="relationship" relationship="viewControllers" id="qAV-rO-efo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -529,27 +556,6 @@
             <point key="canvasLocation" x="732" y="-1272"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="bQC-Vr-6WL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pMi-mY-Ps8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Transaction List-64" selectedImage="Transaction List-64" id="sFU-1v-Tym">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPG-QP-3nM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tc4-b9-5bA" kind="relationship" relationship="rootViewController" id="mTQ-gC-jbb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sRc-xm-Hs3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1430" y="419"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="ApQ-Bt-cYk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uRW-3x-1gA" sceneMemberID="viewController">
@@ -569,6 +575,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdG-Pj-xz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1430" y="-424"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="cVm-vj-RM0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uo4-vb-g1d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="Transaction List-64" selectedImage="Transaction List-64" id="rGZ-dw-m7Y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jJO-UU-SyM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KMG-Sk-KfE" kind="relationship" relationship="rootViewController" id="6Yd-JT-Ktq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYd-Y0-4iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="431"/>
         </scene>
     </scenes>
     <resources>

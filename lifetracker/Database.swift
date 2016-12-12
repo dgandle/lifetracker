@@ -521,6 +521,17 @@ func initDB(){
     }
 }
 
+func getFirstDayTracked() -> NSDate{
+    //Get the default realm
+    let realm = try! Realm()
+
+    //get the totalDays and the currentDay
+    let dbInfo = realm.objects(DBInfo.self)[0]
+    let totalDays = dbInfo.totalDays
+    let currentDay = dbInfo.currentDay
+    return currentDay.dateByAddingTimeInterval(oneDay*Double(-(totalDays-1)))
+}
+
 func getCurrentLTDay() -> NSDate{
     let currentTime = NSDate()
     let currDay = NSCalendar.currentCalendar().startOfDayForDate(currentTime)

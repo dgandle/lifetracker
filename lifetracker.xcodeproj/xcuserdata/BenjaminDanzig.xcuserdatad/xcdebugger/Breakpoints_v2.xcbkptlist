@@ -185,11 +185,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "lifetracker/ChartViewController.swift"
-            timestampString = "503249614.838773"
+            timestampString = "503259475.95133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "setChart(_:values:yLabel:)"
             landmarkType = "5">
          </BreakpointContent>
