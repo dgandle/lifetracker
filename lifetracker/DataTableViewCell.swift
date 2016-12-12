@@ -41,7 +41,7 @@ class DataTableViewCell: UITableViewCell {
                 var days: [String] = []//this should be the days of the week before
                 for i in 0...totalDays-1-existenceCheck.boolAct!.indexOffset{
                     //CONVERT FROM NSDate to String
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.numAct!.indexOffset)))
+                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.boolAct!.indexOffset)))
                     let dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
                     let dateString = dateFormatter.stringFromDate(date)
@@ -68,7 +68,7 @@ class DataTableViewCell: UITableViewCell {
                 var days: [String] = []//this should be the days of the week before
                 for i in 0...totalDays-1-existenceCheck.moodAct!.indexOffset{
                     //CONVERT FROM NSDate to String
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.numAct!.indexOffset)))
+                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.moodAct!.indexOffset)))
                     let dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
                     let dateString = dateFormatter.stringFromDate(date)
@@ -81,7 +81,8 @@ class DataTableViewCell: UITableViewCell {
                 var days: [String] = []//this should be the days of the week before
                 for i in 0...totalDays-1-existenceCheck.dateAct!.indexOffset{
                     //CONVERT FROM NSDate to String
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.numAct!.indexOffset)))
+                    
+                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.dateAct!.indexOffset)))
                     let dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
                     let dateString = dateFormatter.stringFromDate(date)
