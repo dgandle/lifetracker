@@ -16,6 +16,7 @@
 		74D302021DDA066B00F44F20 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74D301FF1DDA066900F44F20 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		74D302031DDA066B00F44F20 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D302001DDA066900F44F20 /* RealmSwift.framework */; };
 		74D302041DDA066B00F44F20 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74D302001DDA066900F44F20 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		74FD2FD51DFF424300AF34EB /* EditHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD2FD41DFF424300AF34EB /* EditHistoryViewController.swift */; };
 		9130381F1DD5126200885AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130381E1DD5126200885AE2 /* AppDelegate.swift */; };
 		913038211DD5126200885AE2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913038201DD5126200885AE2 /* DashboardViewController.swift */; };
 		913038231DD5126200885AE2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913038221DD5126200885AE2 /* DataViewController.swift */; };
@@ -102,6 +103,7 @@
 		74D301FD1DDA007200F44F20 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		74D301FF1DDA066900F44F20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		74D302001DDA066900F44F20 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		74FD2FD41DFF424300AF34EB /* EditHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHistoryViewController.swift; sourceTree = "<group>"; };
 		9100F8751DEDF5B1007A5E2E /* NeuzeitGroT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeuzeitGroT.ttf; sourceTree = "<group>"; };
 		9100F8761DEDF5B7007A5E2E /* NeuzeitGroT_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeuzeitGroT_Bold.ttf; sourceTree = "<group>"; };
 		9130381B1DD5126200885AE2 /* lifetracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifetracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				91D232DA1DFB3799001B6489 /* SelectActivityTypeButton.swift */,
 				9170DCFB1DF336D300C5CDB4 /* DashboardBackgroundCircle.swift */,
 				913038241DD5126200885AE2 /* Main.storyboard */,
+				74FD2FD41DFF424300AF34EB /* EditHistoryViewController.swift */,
 				740C61D01DFB403800FFD551 /* DataTableViewCell.swift */,
 				9170DCF71DF0E36700C5CDB4 /* NavigationControllerDelegate.swift */,
 				9170DCF91DF0E43D00C5CDB4 /* CircleTransitionAnimator.swift */,
@@ -357,6 +360,7 @@
 				9130381F1DD5126200885AE2 /* AppDelegate.swift in Sources */,
 				9170DCF41DF0CFCE00C5CDB4 /* AddNewActivityButton.swift in Sources */,
 				91F30E501DDA513600A48F03 /* TimeTableViewCell.swift in Sources */,
+				74FD2FD51DFF424300AF34EB /* EditHistoryViewController.swift in Sources */,
 				913038211DD5126200885AE2 /* DashboardViewController.swift in Sources */,
 				91D232DB1DFB3799001B6489 /* SelectActivityTypeButton.swift in Sources */,
 				91F6C4501DD5164B001731A3 /* SettingsViewController.swift in Sources */,

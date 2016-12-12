@@ -596,7 +596,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-01-Il0">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-01-Il0">
                                 <rect key="frame" x="140" y="64" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="503258764.07711798">
                                     <!--2016-12-12 18:06:04 +0000-->
@@ -607,6 +607,7 @@
                                 <state key="normal" title="Edit History On This Date"/>
                                 <connections>
                                     <action selector="onButtonPressed:" destination="KMG-Sk-KfE" eventType="touchUpInside" id="2Cd-Xp-vBM"/>
+                                    <segue destination="luk-Ux-SsW" kind="show" id="PtT-qp-tkd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -625,6 +626,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDb-5X-XQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2334" y="431"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ikG-NM-cqN">
+            <objects>
+                <tableViewController id="luk-Ux-SsW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="130-Qr-r23">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VEh-kG-20z">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VEh-kG-20z" id="XZz-Hq-gvw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="luk-Ux-SsW" id="uv6-kK-knb"/>
+                            <outlet property="delegate" destination="luk-Ux-SsW" id="7yG-Xk-KmA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fY4-oe-Qvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3038" y="431"/>
         </scene>
         <!--Settings-->
         <scene sceneID="98j-dD-zE0">
