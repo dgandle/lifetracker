@@ -18,13 +18,13 @@ class SliderTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    @IBAction func sliderValueChanged(sender: AnyObject) {
-        setActivityValue(sliderLabel.text!, date: NSDate(), boolInput: nil, numInput: nil, moodInput: Int(sliderSlider.value), dateInput: nil)
+    @IBAction func sliderValueChanged(_ sender: AnyObject) {
+        setActivityValue(sliderLabel.text!, date: Date(), boolInput: nil, numInput: nil, moodInput: Int(sliderSlider.value), dateInput: nil)
     }
 }

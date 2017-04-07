@@ -15,16 +15,16 @@ class DataTableViewCell: UITableViewCell {
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var activityType: UILabel!
     
-    var dateFormatter = NSDateFormatter()
+    var dateFormatter = DateFormatter()
     
-    let viewController:ChartViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("chartViewController") as! ChartViewController
+    let viewController:ChartViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chartViewController") as! ChartViewController
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         
@@ -41,10 +41,10 @@ class DataTableViewCell: UITableViewCell {
                 var days: [String] = []//this should be the days of the week before
                 for i in 0...totalDays-1-existenceCheck.boolAct!.indexOffset{
                     //CONVERT FROM NSDate to String
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.boolAct!.indexOffset)))
-                    let dateFormatter = NSDateFormatter()
+                    let date = currentDay.addingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.boolAct!.indexOffset)))
+                    let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
-                    let dateString = dateFormatter.stringFromDate(date)
+                    let dateString = dateFormatter.string(from: date)
                     print(dateString)
                     days.append(dateString)
                 }
@@ -55,10 +55,10 @@ class DataTableViewCell: UITableViewCell {
                 var days:[String] = []//this should be the days of the week before
                 for i in 0...totalDays-1-existenceCheck.numAct!.indexOffset{
                     //CONVERT FROM NSDate to String
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.numAct!.indexOffset)))
-                    let dateFormatter = NSDateFormatter()
+                    let date = currentDay.addingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.numAct!.indexOffset)))
+                    let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
-                    let dateString = dateFormatter.stringFromDate(date)
+                    let dateString = dateFormatter.string(from: date)
                     days.append(dateString)
                 }
                 let numArr = convertMyNumberListToDoubleArray(existenceCheck.numAct!.values)
@@ -68,10 +68,10 @@ class DataTableViewCell: UITableViewCell {
                 var days: [String] = []//this should be the days of the week before
                 for i in 0...totalDays-1-existenceCheck.moodAct!.indexOffset{
                     //CONVERT FROM NSDate to String
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.moodAct!.indexOffset)))
-                    let dateFormatter = NSDateFormatter()
+                    let date = currentDay.addingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.moodAct!.indexOffset)))
+                    let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
-                    let dateString = dateFormatter.stringFromDate(date)
+                    let dateString = dateFormatter.string(from: date)
                     days.append(dateString)
                 }
                 let moodArr = convertMyMoodListToDoubleArray(existenceCheck.moodAct!.values)
@@ -82,10 +82,10 @@ class DataTableViewCell: UITableViewCell {
                 for i in 0...totalDays-1-existenceCheck.dateAct!.indexOffset{
                     //CONVERT FROM NSDate to String
                     
-                    let date = currentDay.dateByAddingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.dateAct!.indexOffset)))
-                    let dateFormatter = NSDateFormatter()
+                    let date = currentDay.addingTimeInterval(oneDay*Double(i-(totalDays-1-existenceCheck.dateAct!.indexOffset)))
+                    let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MM/dd"
-                    let dateString = dateFormatter.stringFromDate(date)
+                    let dateString = dateFormatter.string(from: date)
                     days.append(dateString)
                 }
                 let dateArr = convertMyDateListToDoubleArray(existenceCheck.dateAct!.values)

@@ -20,25 +20,25 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
     
     
-    func initSetChartParameters(dataPoints: [String], values: [Double],yLabel: String){
+    func initSetChartParameters(_ dataPoints: [String], values: [Double],yLabel: String){
         days = dataPoints
         valuesArr = values
         yAxisLabel = yLabel
     }
     
-    func setChart(dataPoints: [String], values: [Double],yLabel: String) {
+    func setChart(_ dataPoints: [String], values: [Double],yLabel: String) {
         barChartView.noDataText = "You need to provide data for the chart."
         
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            let dataEntry = BarChartDataEntry(x: values[i], y: Double(i))
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: yLabel)
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: yLabel)
         chartDataSet.colors = ChartColorTemplates.colorful()
-        let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
+        let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
     }
     
@@ -46,7 +46,7 @@ class ChartViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.      
-        setChart(days, values: valuesArr,yLabel: yAxisLabel)
+        setChart(days, values: valuesArr, yLabel: yAxisLabel)
     }
     
     

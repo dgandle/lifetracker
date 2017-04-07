@@ -34,14 +34,14 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //temporary value
         return numActivities.count+dateActivities.count+moodActivities.count+boolActivities.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("dataCell") as! DataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as! DataTableViewCell
         if (indexPath.row < numActivities.count) {
             //let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
             cell.activityName.text = numActivities[indexPath.row].name
@@ -64,8 +64,8 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

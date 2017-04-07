@@ -30,10 +30,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         boolActivities = realm.objects(BooleanActivity.self)
 
         if (self.title == "Edit-Activity-List") {
-            navigationItem.rightBarButtonItem = editButtonItem()
+            navigationItem.rightBarButtonItem = editButtonItem
         }
 
-        self.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "settingsIcon")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "settingsIcon"))
+        self.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "settingsIcon")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "settingsIcon"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.title == "Settings") {
             return 1
         } else if (self.title == "Edit-Activity-List") {
@@ -53,12 +53,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (self.title == "Settings") {
-            let cell =  tableView.dequeueReusableCellWithIdentifier("editActivityListCell")! as UITableViewCell
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "editActivityListCell")! as UITableViewCell
             return cell
         } else if (self.title == "Edit-Activity-List") {
-            let cell = tableView.dequeueReusableCellWithIdentifier("basicTableViewCell")! as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicTableViewCell")! as UITableViewCell
             
             if (indexPath.row < numActivities.count) { //problem is here
                 cell.textLabel!.text = numActivities[indexPath.row].name
@@ -78,7 +78,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (self.title == "Settings") {
             return "activities"
         } else {
@@ -86,32 +86,32 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    @IBAction func editButtonPressed(sender: AnyObject) {
+    @IBAction func editButtonPressed(_ sender: AnyObject) {
         print("edit pressed")
     }
     
     // Override to support editing the table view.
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            removeActivity((tableView.cellForRowAtIndexPath(indexPath)!.textLabel!.text)!)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            removeActivity((tableView.cellForRow(at: indexPath)!.textLabel!.text)!)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
     
     // Override to support conditional editing of the table view.
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
     
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         editListTableView.setEditing(editing, animated: animated)
     }

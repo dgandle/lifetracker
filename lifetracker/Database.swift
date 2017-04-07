@@ -33,7 +33,7 @@ class MyMood: Object {
     dynamic var value = 0;
 }
 class MyDate: Object {
-    dynamic var value =  NSDate();
+    dynamic var value =  Date();
 }
 
 /*
@@ -62,7 +62,7 @@ class MoodActivity: Activity {
     var values = List<MyMood>()
 }
 
-func convertMyNumberListToDoubleArray(list: List<MyNumber>)->[Double]{
+func convertMyNumberListToDoubleArray(_ list: List<MyNumber>)->[Double]{
     var arr: [Double] = []
     for i in 0...list.count-1{
         arr.append(Double(list[i].value))
@@ -70,7 +70,7 @@ func convertMyNumberListToDoubleArray(list: List<MyNumber>)->[Double]{
     return arr
 }
 
-func convertMyBooleanListToDoubleArray(list: List<MyBoolean>)->[Double]{
+func convertMyBooleanListToDoubleArray(_ list: List<MyBoolean>)->[Double]{
     var arr: [Double] = []
     for i in 0...list.count-1{
         if(list[i].value){
@@ -83,7 +83,7 @@ func convertMyBooleanListToDoubleArray(list: List<MyBoolean>)->[Double]{
     return arr
 }
 
-func convertMyMoodListToDoubleArray(list: List<MyMood>)->[Double]{
+func convertMyMoodListToDoubleArray(_ list: List<MyMood>)->[Double]{
     var arr: [Double] = []
     for i in 0...list.count-1{
         arr.append(Double(list[i].value))
@@ -91,12 +91,12 @@ func convertMyMoodListToDoubleArray(list: List<MyMood>)->[Double]{
     return arr
 }
 
-func convertMyDateListToDoubleArray(list: List<MyDate>)->[Double]{
+func convertMyDateListToDoubleArray(_ list: List<MyDate>)->[Double]{
     var arr: [Double] = []
     for i in 0...list.count-1{
         let currentTime = list[i].value
-        let startOfCurrentDay = realDateToLTDay(currentTime).dateByAddingTimeInterval(resetTime)
-        let secondsAfterStartOfDay = currentTime.timeIntervalSinceDate(startOfCurrentDay)
+        let startOfCurrentDay = realDateToLTDay(currentTime).addingTimeInterval(resetTime)
+        let secondsAfterStartOfDay = currentTime.timeIntervalSince(startOfCurrentDay)
         arr.append(secondsAfterStartOfDay)
     }
     return arr
@@ -114,7 +114,7 @@ class DBInfo: Object{
  is the data type of the new activity, which can
  be either Boolean, Number, Mood, or Date.
 */
-func addNewActivity(name: String ,type:String){
+func addNewActivity(_ name: String ,type:String){
     //Get the default realm
     let realm = try! Realm()
     
@@ -215,7 +215,7 @@ func addNewActivity(name: String ,type:String){
  of activities to be tracked. "name" parameter
  is the name of the activity to be deleted.
  */
-func removeActivity(name: String){
+func removeActivity(_ name: String){
     //Get the default realm
     let realm = try! Realm()
     
@@ -256,7 +256,7 @@ func removeActivity(name: String){
 /*
  function to get the value of a particular activity for the current day.
  */
-func getActivityValue(name: String,date: NSDate) -> (boolVal: Bool?,numVal: Int?,moodVal: Int?,dateVal: NSDate?){
+func getActivityValue(_ name: String,date: Date) -> (boolVal: Bool?,numVal: Int?,moodVal: Int?,dateVal: Date?){
     //Get the default realm
     let realm = try! Realm()
     
@@ -273,7 +273,7 @@ func getActivityValue(name: String,date: NSDate) -> (boolVal: Bool?,numVal: Int?
     
     let ltDate = realDateToLTDay(date)
     let currDate = getCurrentLTDay()
-    let numSecondsAgo = ltDate.timeIntervalSinceDate(currDate)
+    let numSecondsAgo = ltDate.timeIntervalSince(currDate)
     let numDaysAgo = Int(floor(numSecondsAgo/oneDay))
     //this means we have picked a date in the future which is impossible
     if(numDaysAgo<0){
@@ -321,7 +321,7 @@ func getActivityValue(name: String,date: NSDate) -> (boolVal: Bool?,numVal: Int?
 /*
  function to set the value of a particular activity for the current day.
  */
-func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?, moodInput: Int?,dateInput: NSDate?){
+func setActivityValue(_ name: String,date: Date, boolInput: Bool?,numInput: Int?, moodInput: Int?,dateInput: Date?){
     //Get the default realm
     let realm = try! Realm()
     
@@ -336,7 +336,7 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
     let dbInfo = realm.objects(DBInfo.self)[0]
     let totalDays = dbInfo.totalDays
     let currentDay = dbInfo.currentDay
-    let tomorrow = currentDay.dateByAddingTimeInterval(oneDay)
+    let tomorrow = currentDay.addingTimeInterval(oneDay)
     
     //one of the inputs should have been entered, and the others
     //will be nil. So find the one input that is non-nil and set 
@@ -344,7 +344,7 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
     if((boolInput) != nil){
         
         //if the date is in the future
-        if(date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending){
+        if(date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending){
             if(!newDayReset()){
                 print("The date you have entered is in the future and invalid. Please try another date.")
                 return
@@ -353,16 +353,16 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
         let myVal = MyBoolean()
         myVal.value = boolInput!
         //if the date is today
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending && date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending && date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             try! realm.write {
                 existenceCheck.boolAct!.values[totalDays-1] = myVal
             }
         }
         //if the date is a past day
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             let ltDate = realDateToLTDay(date)
             let currDate = getCurrentLTDay()
-            let numSecondsAgo = ltDate.timeIntervalSinceDate(currDate)
+            let numSecondsAgo = ltDate.timeIntervalSince(currDate)
             let numDaysAgo = -Int(floor(numSecondsAgo/oneDay))
             //check if the past day was before the first day that we are tracking.
             if(totalDays-1-numDaysAgo<0){
@@ -383,7 +383,7 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
     else if((numInput) != nil){
         
         //if the date is in the future
-        if(date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending){
+        if(date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending){
             if(!newDayReset()){
                 print("The date you have entered is in the future and invalid. Please try another date.")
                 return
@@ -392,16 +392,16 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
         let myVal = MyNumber()
         myVal.value = numInput!
         //if the date is today
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending && date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending && date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             try! realm.write {
                 existenceCheck.numAct!.values[totalDays-1] = myVal
             }
         }
         //if the date is a past day
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             let ltDate = realDateToLTDay(date)
             let currDate = getCurrentLTDay()
-            let numSecondsAgo = ltDate.timeIntervalSinceDate(currDate)
+            let numSecondsAgo = ltDate.timeIntervalSince(currDate)
             let numDaysAgo = -Int(floor(numSecondsAgo/oneDay))
             //check if the past day was before the first day that we are tracking.
             if(totalDays-1-numDaysAgo<0){
@@ -422,7 +422,7 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
     else if((moodInput) != nil){
         
         //if the date is in the future
-        if(date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending){
+        if(date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending){
             if(!newDayReset()){
                 print("The date you have entered is in the future and invalid. Please try another date.")
                 return
@@ -431,16 +431,16 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
         let myVal = MyMood()
         myVal.value = moodInput!
         //if the date is today
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending && date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending && date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             try! realm.write {
                 existenceCheck.moodAct!.values[totalDays-1] = myVal
             }
         }
         //if the date is a past day
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             let ltDate = realDateToLTDay(date)
             let currDate = getCurrentLTDay()
-            let numSecondsAgo = ltDate.timeIntervalSinceDate(currDate)
+            let numSecondsAgo = ltDate.timeIntervalSince(currDate)
             let numDaysAgo = -Int(floor(numSecondsAgo/oneDay))
             //check if the past day was before the first day that we are tracking.
             if(totalDays-1-numDaysAgo<0){
@@ -461,7 +461,7 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
     else if((dateInput) != nil){
         
         //if the date is in the future
-        if(date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending){
+        if(date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending){
             if(!newDayReset()){
                 print("The date you have entered is in the future and invalid. Please try another date.")
                 return
@@ -470,16 +470,16 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
         let myVal = MyDate()
         myVal.value = dateInput!
         //if the date is today
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedDescending && date.compare(tomorrow.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedDescending && date.compare(tomorrow.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             try! realm.write {
                 existenceCheck.dateAct!.values[totalDays-1] = myVal
             }
         }
         //if the date is a past day
-        if(date.compare(currentDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
+        if(date.compare(currentDay.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
             let ltDate = realDateToLTDay(date)
             let currDate = getCurrentLTDay()
-            let numSecondsAgo = ltDate.timeIntervalSinceDate(currDate)
+            let numSecondsAgo = ltDate.timeIntervalSince(currDate)
             let numDaysAgo = -Int(floor(numSecondsAgo/oneDay))
             //check if the past day was before the first day that we are tracking.
             if(totalDays-1-numDaysAgo<0){
@@ -502,7 +502,7 @@ func setActivityValue(name: String,date: NSDate, boolInput: Bool?,numInput: Int?
 
 //increment the value of a number activity for a particular date. "incVal" is the amount by which
 //we will increment the current value. If the number is negative, we will decrement the value.
-func incrementNumActivity(name: String,date: NSDate,incVal: Int){
+func incrementNumActivity(_ name: String,date: Date,incVal: Int){
     let currentVal = getActivityValue(name, date: date).numVal;
     if(currentVal==nil){
         print("The activity you have chosen has no current value. Please choose another activity or date.")
@@ -521,7 +521,7 @@ func initDB(){
     }
 }
 
-func getFirstDayTracked() -> NSDate{
+func getFirstDayTracked() -> Date{
     //Get the default realm
     let realm = try! Realm()
 
@@ -529,24 +529,24 @@ func getFirstDayTracked() -> NSDate{
     let dbInfo = realm.objects(DBInfo.self)[0]
     let totalDays = dbInfo.totalDays
     let currentDay = dbInfo.currentDay
-    return currentDay.dateByAddingTimeInterval(oneDay*Double(-(totalDays-1)))
+    return currentDay.addingTimeInterval(oneDay*Double(-(totalDays-1)))
 }
 
-func getCurrentLTDay() -> NSDate{
-    let currentTime = NSDate()
-    let currDay = NSCalendar.currentCalendar().startOfDayForDate(currentTime)
-    if(currentTime.compare(currDay.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
-        return currDay.dateByAddingTimeInterval(-oneDay)
+func getCurrentLTDay() -> Date{
+    let currentTime = Date()
+    let currDay = Calendar.current.startOfDay(for: currentTime)
+    if(currentTime.compare(currDay.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
+        return currDay.addingTimeInterval(-oneDay)
     }
     else{
         return currDay
     }
 }
 
-func realDateToLTDay(dateTime: NSDate) -> NSDate{
-    let date = NSCalendar.currentCalendar().startOfDayForDate(dateTime)
-    if(dateTime.compare(date.dateByAddingTimeInterval(resetTime))==NSComparisonResult.OrderedAscending){
-        return date.dateByAddingTimeInterval(-oneDay)
+func realDateToLTDay(_ dateTime: Date) -> Date{
+    let date = Calendar.current.startOfDay(for: dateTime)
+    if(dateTime.compare(date.addingTimeInterval(resetTime))==ComparisonResult.orderedAscending){
+        return date.addingTimeInterval(-oneDay)
     }
     else{
         return date
@@ -566,7 +566,7 @@ func newDayReset() ->Bool{
     let totalDays = dbInfo.totalDays
     let currentDay = dbInfo.currentDay
     let currentLTDay = getCurrentLTDay()
-    if(currentLTDay.compare(currentDay)==NSComparisonResult.OrderedDescending){
+    if(currentLTDay.compare(currentDay)==ComparisonResult.orderedDescending){
         let booleanActs = realm.objects(BooleanActivity.self)
         let numActs = realm.objects(NumberActivity.self)
         let moodActs = realm.objects(MoodActivity.self)
@@ -604,7 +604,7 @@ func newDayReset() ->Bool{
  the same name exists, and if it doesn't exist nil is returned along
  with the boolean false.
 */
-func nameExistsAlready(name: String) -> (exists: Bool,boolAct: BooleanActivity?,numAct: NumberActivity?,moodAct:MoodActivity?,dateAct:DateActivity?){
+func nameExistsAlready(_ name: String) -> (exists: Bool,boolAct: BooleanActivity?,numAct: NumberActivity?,moodAct:MoodActivity?,dateAct:DateActivity?){
     //Get the default realm
     let realm = try! Realm()
     

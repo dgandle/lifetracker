@@ -14,47 +14,47 @@ class SelectActivityTypeButton: UIButton {
     
     func unselectAlternateButtons(){
         if alternateButton != nil {
-            self.selected = true
+            self.isSelected = true
             
             for aButton:SelectActivityTypeButton in alternateButton! {
-                aButton.selected = false
+                aButton.isSelected = false
             }
         } else {
             toggleButton()
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         unselectAlternateButtons()
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
             
             
-            if (highlighted) {
-                self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            if (isHighlighted) {
+                self.setTitleColor(UIColor.white, for: UIControlState())
                 if (self.titleLabel?.text == "yes/no") {
-                    self.setBackgroundImage(UIImage(named: "booleanSelectButtonImage"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "booleanSelectButtonImage"), for: UIControlState())
                 } else if (self.titleLabel?.text == "slider") {
-                    self.setBackgroundImage(UIImage(named: "sliderSelectButtonImage"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "sliderSelectButtonImage"), for: UIControlState())
                 } else if (self.titleLabel?.text == "counter") {
-                    self.setBackgroundImage(UIImage(named: "counterSelectButtonImage"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "counterSelectButtonImage"), for: UIControlState())
                 } else if (self.titleLabel?.text == "time") {
-                    self.setBackgroundImage(UIImage(named: "timeSelectButtonImage"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "timeSelectButtonImage"), for: UIControlState())
                 }
             }
             else {
-                self.setTitleColor(UIColor( red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7), forState: .Normal)
+                self.setTitleColor(UIColor( red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7), for: UIControlState())
                 if (self.titleLabel?.text == "yes/no") {
-                    self.setBackgroundImage(UIImage(named: "booleanSelectButtonImageDark"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "booleanSelectButtonImageDark"), for: UIControlState())
                 } else if (self.titleLabel?.text == "slider") {
-                    self.setBackgroundImage(UIImage(named: "sliderSelectButtonImageDark"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "sliderSelectButtonImageDark"), for: UIControlState())
                 } else if (self.titleLabel?.text == "counter") {
-                    self.setBackgroundImage(UIImage(named: "counterSelectButtonImageDark"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "counterSelectButtonImageDark"), for: UIControlState())
                 } else if (self.titleLabel?.text == "time") {
-                    self.setBackgroundImage(UIImage(named: "timeSelectButtonImageDark"), forState: .Normal)
+                    self.setBackgroundImage(UIImage(named: "timeSelectButtonImageDark"), for: UIControlState())
                 }
             }
             
@@ -62,15 +62,15 @@ class SelectActivityTypeButton: UIButton {
     }
     
     func toggleButton() {
-        self.selected = !selected
+        self.isSelected = !isSelected
     }
     
-    override var selected: Bool {
+    override var isSelected: Bool {
         didSet {
-            if selected {
-                self.layer.borderColor = UIColor.whiteColor().CGColor
+            if isSelected {
+                self.layer.borderColor = UIColor.white.cgColor
             } else {
-                self.layer.borderColor = UIColor.blackColor().CGColor
+                self.layer.borderColor = UIColor.black.cgColor
             }
         }
     }

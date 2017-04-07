@@ -23,15 +23,15 @@ class CounterTableViewCell: UITableViewCell {
         
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    @IBAction func counterStepperValueChanged(sender: UIStepper) {
+    @IBAction func counterStepperValueChanged(_ sender: UIStepper) {
         counterValue.text = Int(sender.value).description
         
-        setActivityValue(counterLabel.text!, date: NSDate(), boolInput: nil, numInput: Int(sender.value), moodInput: nil, dateInput: nil)
+        setActivityValue(counterLabel.text!, date: Date(), boolInput: nil, numInput: Int(sender.value), moodInput: nil, dateInput: nil)
     }
 }

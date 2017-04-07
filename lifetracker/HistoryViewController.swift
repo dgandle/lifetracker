@@ -14,8 +14,8 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker.minimumDate = getFirstDayTracked()
-        datePicker.maximumDate = NSDate()
+        datePicker.minimumDate = getFirstDayTracked() as Date
+        datePicker.maximumDate = Date()
 
         // Do any additional setup after loading the view.
     }
@@ -25,7 +25,7 @@ class HistoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onButtonPressed(sender: AnyObject) {
+    @IBAction func onButtonPressed(_ sender: AnyObject) {
     }
 
     /*

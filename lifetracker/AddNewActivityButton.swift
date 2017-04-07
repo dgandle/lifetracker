@@ -14,14 +14,14 @@ class AddNewActivityButton: UIButton {
     
     var degrees:CGFloat = 0
     var backgroundCircleColor = UIColor(red: 58/255, green: 197/255, blue: 105/255, alpha: 1.0)
-    var plusColor = UIColor.whiteColor()
+    var plusColor = UIColor.white
     var hasTransitioned = false;
 
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        var path = UIBezierPath(ovalInRect: rect)
+    override func draw(_ rect: CGRect) {
+        let path = UIBezierPath(ovalIn: rect)
         backgroundCircleColor.setFill()
         path.fill()
         
@@ -33,30 +33,30 @@ class AddNewActivityButton: UIButton {
         let plusWidth: CGFloat = 15.5
         
         //create the path
-        var plusPath = UIBezierPath()
+        let plusPath = UIBezierPath()
         
         //set the path's line width to the height of the stroke
         plusPath.lineWidth = plusHeight
         
         //move the initial point of the path
         //to the start of the horizontal stroke
-        plusPath.moveToPoint(CGPoint(
+        plusPath.move(to: CGPoint(
             x:bounds.width/2 - plusWidth/2,
             y:bounds.height/2))
         
         //add a point to the path at the end of the stroke
-        plusPath.addLineToPoint(CGPoint(
+        plusPath.addLine(to: CGPoint(
             x:bounds.width/2 + plusWidth/2,
             y:bounds.height/2))
         
         //Vertical Line
         //move to the start of the vertical stroke
-        plusPath.moveToPoint(CGPoint(
+        plusPath.move(to: CGPoint(
             x:bounds.width/2,
             y:bounds.height/2 - plusWidth/2))
         
         //add the end point to the vertical stroke
-        plusPath.addLineToPoint(CGPoint(
+        plusPath.addLine(to: CGPoint(
             x:bounds.width/2,
             y:bounds.height/2 + plusWidth/2))
         
@@ -67,12 +67,12 @@ class AddNewActivityButton: UIButton {
         plusPath.stroke()
         
         //rotate if desired
-        var radians = degrees * CGFloat(M_PI/180)
-        self.transform = CGAffineTransformMakeRotation(radians);
+        let radians = degrees * CGFloat(M_PI/180)
+        self.transform = CGAffineTransform(rotationAngle: radians);
         
     }
  
-    func rotate45Degrees(duration: CFTimeInterval = 0.6, completionDelegate: AnyObject? = nil) {
+    func rotate45Degrees(_ duration: CFTimeInterval = 0.6, completionDelegate: AnyObject? = nil) {
         
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         let rotateAnimationCurve = CAMediaTimingFunction(controlPoints: 0.1, 0.54, 0.53, 0.99)
@@ -88,9 +88,9 @@ class AddNewActivityButton: UIButton {
         rotateAnimation.timingFunction = rotateAnimationCurve
         
         if let delegate: AnyObject = completionDelegate {
-            rotateAnimation.delegate = delegate
+            rotateAnimation.delegate = delegate as! CAAnimationDelegate
         }
-        self.layer.addAnimation(rotateAnimation, forKey: nil)
+        self.layer.add(rotateAnimation, forKey: nil)
         
         //Animate Opacity
 //        let alphaAnimation = CABasicAnimation(keyPath: "opacity")
