@@ -29,6 +29,28 @@ class ChartViewController: UIViewController {
     func setChart(_ dataPoints: [String], values: [Double],yLabel: String) {
         barChartView.noDataText = "You need to provide data for the chart."
         
+        
+        //Chart Formatting
+        barChartView.leftAxis.drawAxisLineEnabled = false
+        barChartView.leftAxis.granularity = 1
+        barChartView.rightAxis.enabled = false
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        
+        barChartView.legend.enabled = false
+        barChartView.drawValueAboveBarEnabled = false
+        barChartView.highlightFullBarEnabled = false
+        barChartView.chartDescription?.text = ""
+        
+        
+        barChartView.xAxis.labelFont = UIFont(name: "NeuzeitGroT", size: 12)!
+        barChartView.xAxis.labelTextColor = UIColor(red:0.58, green:0.60, blue:0.60, alpha:1.0)
+        barChartView.leftAxis.labelFont = UIFont(name: "NeuzeitGroT", size: 12)!
+        barChartView.leftAxis.labelTextColor = UIColor(red:0.58, green:0.60, blue:0.60, alpha:1.0)
+        barChartView.leftAxis.gridColor = UIColor(red:0.87, green:0.87, blue:0.90, alpha:1.0)
+        
+        
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
@@ -37,7 +59,8 @@ class ChartViewController: UIViewController {
         }
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: yLabel)
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.setColor(UIColor(red:0.23, green:0.77, blue:0.41, alpha:1.0))
+        chartDataSet.drawValuesEnabled = false
         let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
     }
