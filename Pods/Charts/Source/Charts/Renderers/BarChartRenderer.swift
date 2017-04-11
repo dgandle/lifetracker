@@ -285,7 +285,11 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 }
                 
                 context.setFillColor(dataSet.barShadowColor.cgColor)
-                context.fill(barRect)
+                // Code to add rounded corners to bar charts - taken from http://stackoverflow.com/questions/37920237/rounded-bars-in-ios-charts
+                // Replaced default code context.fill(barRect)
+                let bezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: 4)
+                context.addPath(bezierPath.cgPath)
+                context.drawPath(using: .fill)
             }
         }
         
@@ -316,7 +320,12 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
             
-            context.fill(barRect)
+            // Code to add rounded corners to bar charts - taken from http://stackoverflow.com/questions/37920237/rounded-bars-in-ios-charts
+            // Replaced default code context.fill(barRect)
+            let bezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: 4)
+            context.addPath(bezierPath.cgPath)
+            context.drawPath(using: .fill)
+            
             
             if drawBorder
             {
@@ -685,7 +694,11 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 
                 setHighlightDrawPos(highlight: high, barRect: barRect)
                 
-                context.fill(barRect)
+                // Code to add rounded corners to bar charts - taken from http://stackoverflow.com/questions/37920237/rounded-bars-in-ios-charts
+                // Replaced default code context.fill(barRect)
+                let bezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: 4)
+                context.addPath(bezierPath.cgPath)
+                context.drawPath(using: .fill)
             }
         }
         
