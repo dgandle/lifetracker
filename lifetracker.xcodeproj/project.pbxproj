@@ -37,6 +37,7 @@
 		91F6C44E1DD51628001731A3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F6C44D1DD51628001731A3 /* HistoryViewController.swift */; };
 		91F6C4501DD5164B001731A3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F6C44F1DD5164B001731A3 /* SettingsViewController.swift */; };
 		91F7BFAC1DEF711C0034778A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BFAB1DEF711C0034778A /* LaunchScreen.storyboard */; };
+		91FDB6341EA10FF200B3AEBF /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FDB6331EA10FF200B3AEBF /* PieChartViewController.swift */; };
 		FE69B5210051AE60288C1CD0 /* Pods_lifetracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737292861AD067EC8FF70A18 /* Pods_lifetracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		91F6C44F1DD5164B001731A3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		91F7BFAB1DEF711C0034778A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91F7BFAD1DEF78B90034778A /* SofiaProSemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SofiaProSemiBold.otf; sourceTree = "<group>"; };
+		91FDB6331EA10FF200B3AEBF /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartViewController.swift; path = ../PieChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				913038201DD5126200885AE2 /* DashboardViewController.swift */,
 				913038221DD5126200885AE2 /* DataViewController.swift */,
 				740C61CE1DFB3E3100FFD551 /* ChartViewController.swift */,
+				91FDB6331EA10FF200B3AEBF /* PieChartViewController.swift */,
 				91F6C44F1DD5164B001731A3 /* SettingsViewController.swift */,
 				9170DCF31DF0CFCE00C5CDB4 /* AddNewActivityButton.swift */,
 				91D232DA1DFB3799001B6489 /* SelectActivityTypeButton.swift */,
@@ -333,6 +336,7 @@
 				913038231DD5126200885AE2 /* DataViewController.swift in Sources */,
 				9170DCFC1DF336D300C5CDB4 /* DashboardBackgroundCircle.swift in Sources */,
 				740C61CF1DFB3E3100FFD551 /* ChartViewController.swift in Sources */,
+				91FDB6341EA10FF200B3AEBF /* PieChartViewController.swift in Sources */,
 				740C61D11DFB403800FFD551 /* DataTableViewCell.swift in Sources */,
 				91F30E4E1DDA512700A48F03 /* SliderTableViewCell.swift in Sources */,
 				9130381F1DD5126200885AE2 /* AppDelegate.swift in Sources */,

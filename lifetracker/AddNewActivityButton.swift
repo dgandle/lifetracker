@@ -67,7 +67,7 @@ class AddNewActivityButton: UIButton {
         plusPath.stroke()
         
         //rotate if desired
-        let radians = degrees * CGFloat(M_PI/180)
+        let radians = degrees * CGFloat(Double.pi/180)
         self.transform = CGAffineTransform(rotationAngle: radians);
         
     }
@@ -79,16 +79,16 @@ class AddNewActivityButton: UIButton {
         
         if (hasTransitioned == false) {
             rotateAnimation.fromValue = 0.0
-            rotateAnimation.toValue = CGFloat(M_PI * 0.25)
+            rotateAnimation.toValue = CGFloat(.pi * 0.25)
         } else {
-            rotateAnimation.fromValue = CGFloat(M_PI * 0.25)
-            rotateAnimation.toValue = CGFloat(M_PI * 0.5)
+            rotateAnimation.fromValue = CGFloat(.pi * 0.25)
+            rotateAnimation.toValue = CGFloat(.pi * 0.5)
         }
         rotateAnimation.duration = duration
         rotateAnimation.timingFunction = rotateAnimationCurve
         
         if let delegate: AnyObject = completionDelegate {
-            rotateAnimation.delegate = delegate as! CAAnimationDelegate
+            rotateAnimation.delegate = (delegate as! CAAnimationDelegate)
         }
         self.layer.add(rotateAnimation, forKey: nil)
         

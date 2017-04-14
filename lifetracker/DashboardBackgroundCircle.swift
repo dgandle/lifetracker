@@ -33,9 +33,9 @@ class DashboardBackgroundCircle: UIView {
         moveAnimation.fillMode = kCAFillModeForwards;
         
         
-        if let delegate: AnyObject = completionDelegate {
-//            moveAnimation.delegate = delegate
-        }
+//        if let _: AnyObject = completionDelegate {
+////            moveAnimation.delegate = delegate
+//        }
         self.layer.add(moveAnimation, forKey: nil)
         
     }

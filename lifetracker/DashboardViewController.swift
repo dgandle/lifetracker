@@ -45,7 +45,7 @@ class DashboardViewController:UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newDayReset()
+//        newDayReset()
         
         numActivities = realm.objects(NumberActivity.self)
         dateActivities = realm.objects(DateActivity.self)

@@ -41,23 +41,27 @@ class DataViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as! DataTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "counterCell") as! DataTableViewCell
         if (indexPath.row < numActivities.count) {
-            //let cell = tableView.dequeueReusableCellWithIdentifier("counterCell") as! CounterTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "counterCell") as! DataTableViewCell
             cell.activityName.text = numActivities[indexPath.row].name
             cell.activityType.text = "Counter"
             return cell
-        }else if(indexPath.row < numActivities.count+moodActivities.count){
+        }
+        else if(indexPath.row < numActivities.count+moodActivities.count){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell") as! DataTableViewCell
             cell.activityName.text = moodActivities[indexPath.row-numActivities.count].name
             cell.activityType.text = "Mood"
             return cell
         }
         else if(indexPath.row < numActivities.count+moodActivities.count+boolActivities.count){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "booleanCell") as! DataTableViewCell
             cell.activityName.text = boolActivities[indexPath.row-(numActivities.count+moodActivities.count)].name
             cell.activityType.text = "Yes/No"
             return cell
         }
         else{//case that it is a date cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell") as! DataTableViewCell
             cell.activityName.text = dateActivities[indexPath.row-(numActivities.count+moodActivities.count+boolActivities.count)].name
             cell.activityType.text = "Time"
             return cell
